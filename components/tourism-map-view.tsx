@@ -222,7 +222,7 @@ export function TourismMapView() {
           
           const map = new maplibregl.Map({
             container: mapRef.current,
-            style: 'https://api.maptiler.com/maps/streets-v2/style.json?key=Pd85kmLr2NsBZ7APc3eK',
+            style: process.env.NEXT_PUBLIC_MAPTILER_STYLE_URL || 'https://api.maptiler.com/maps/streets-v2/style.json?key=Pd85kmLr2NsBZ7APc3eK',
             center: [3.3450, 7.1550], // [lng, lat] for Abeokuta
             zoom: 12
           })

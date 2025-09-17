@@ -2,5 +2,9 @@
   "buildCommand": "npm run build",
   "outputDirectory": ".next",
   "framework": "nextjs",
-  "installCommand": "npm install"
+  "installCommand": "npm install",
+  "env": {
+    "NEXT_PUBLIC_MAPTILER_API_KEY": "Pd85kmLr2NsBZ7APc3eK",
+    "NEXT_PUBLIC_MAPTILER_STYLE_URL": "https://api.maptiler.com/maps/streets-v2/style.json?key=Pd85kmLr2NsBZ7APc3eK"
+  }
 }
