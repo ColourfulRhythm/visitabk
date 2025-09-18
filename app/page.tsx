@@ -2,7 +2,7 @@ import { TourismHero } from '@/components/tourism-hero'
 import { TourismSearchBar } from '@/components/tourism-search-bar'
 import { TourismDevelopmentsList } from '@/components/tourism-developments-list'
 import { TourismAttractions } from '@/components/tourism-attractions'
-import { TourismMapView } from '@/components/tourism-map-view'
+import { SimpleMapView } from '@/components/simple-map-view'
 
 export default function Home() {
   return (
@@ -39,7 +39,7 @@ export default function Home() {
             </p>
           </div>
           <div className="h-[500px] rounded-3xl overflow-hidden shadow-2xl">
-            <TourismMapView />
+            <SimpleMapView />
           </div>
         </div>
       </div>
