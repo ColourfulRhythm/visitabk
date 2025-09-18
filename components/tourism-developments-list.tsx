@@ -1,7 +1,7 @@
 "use client"
 
-import { useState } from 'react'
-import { MapPin, Building2, ExternalLink, Edit, Heart, Share2, ArrowRight, Trees, Home, Users } from 'lucide-react'
+import { useState, useEffect } from 'react'
+import { MapPin, Building2, ExternalLink, Edit, Heart, Share2, ArrowRight, Trees, Home, Users, Save, X } from 'lucide-react'
 
 // Real development data based on user's information
 const realDevelopments = [
@@ -207,7 +207,56 @@ export function TourismDevelopmentsList() {
   const [searchQuery, setSearchQuery] = useState('')
   const [statusFilter, setStatusFilter] = useState('all')
   const [selectedDevelopment, setSelectedDevelopment] = useState<any>(null)
-  const [developments] = useState(realDevelopments)
+  const [developments, setDevelopments] = useState(realDevelopments)
+  const [editingId, setEditingId] = useState<string | null>(null)
+  const [editForm, setEditForm] = useState<any>(null)
+
+  // Load saved developments from localStorage on component mount
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('visitabk-developments')
+      if (saved) {
+        try {
+          const savedDevelopments = JSON.parse(saved)
+          setDevelopments(savedDevelopments)
+        } catch (error) {
+          console.error('Error loading saved developments:', error)
+        }
+      }
+    }
+  }, [])
+
+  // Save developments to localStorage
+  const saveDevelopments = (newDevelopments: any[]) => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('visitabk-developments', JSON.stringify(newDevelopments))
+      setDevelopments(newDevelopments)
+    }
+  }
+
+  // Start editing a development
+  const startEditing = (dev: any) => {
+    setEditingId(dev.id)
+    setEditForm({ ...dev })
+  }
+
+  // Save edited development
+  const saveEdit = () => {
+    if (!editForm || !editingId) return
+    
+    const updatedDevelopments = developments.map(dev => 
+      dev.id === editingId ? { ...editForm } : dev
+    )
+    saveDevelopments(updatedDevelopments)
+    setEditingId(null)
+    setEditForm(null)
+  }
+
+  // Cancel editing
+  const cancelEdit = () => {
+    setEditingId(null)
+    setEditForm(null)
+  }
 
   const filteredDevelopments = developments.filter(dev => {
     const matchesSearch = dev.name.toLowerCase().includes(searchQuery.toLowerCase()) ||

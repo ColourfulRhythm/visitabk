@@ -6,8 +6,8 @@ import { ThemeProvider } from '@/components/theme-provider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'VisitABK - Real Estate Development Tracker',
-  description: 'Minimalistic real estate tracking application for Kobape, Abeokuta, Nigeria',
+  title: 'VisitABK - Discover Abeokuta',
+  description: 'Tracking application for developments in Kobape, Abeokuta - the future of green, eco-friendly and luxury living in Abeokuta',
 }
 
 export default function RootLayout({

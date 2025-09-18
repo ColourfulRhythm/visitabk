@@ -1,10 +1,17 @@
+'use client'
+
+import { useState } from 'react'
+import { Plus } from 'lucide-react'
 import { TourismHero } from '@/components/tourism-hero'
 import { TourismSearchBar } from '@/components/tourism-search-bar'
 import { TourismDevelopmentsList } from '@/components/tourism-developments-list'
 import { TourismAttractions } from '@/components/tourism-attractions'
 import { SimpleMapView } from '@/components/simple-map-view'
+import { SubmissionForm } from '@/components/submission-form'
 
 export default function Home() {
+  const [showSubmissionForm, setShowSubmissionForm] = useState(false)
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
       {/* Hero Section */}
@@ -43,6 +50,20 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Floating Submit Button */}
+      <button
+        onClick={() => setShowSubmissionForm(true)}
+        className="fixed bottom-8 right-8 w-16 h-16 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-full shadow-2xl hover:shadow-3xl hover:scale-110 transition-all duration-300 flex items-center justify-center z-40 group"
+        title="Submit your development or attraction"
+      >
+        <Plus className="h-8 w-8 group-hover:rotate-90 transition-transform duration-300" />
+      </button>
+
+      {/* Submission Form Modal */}
+      {showSubmissionForm && (
+        <SubmissionForm onClose={() => setShowSubmissionForm(false)} />
+      )}
     </div>
   )
 }
