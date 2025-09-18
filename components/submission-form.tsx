@@ -5,9 +5,10 @@ import { Send, Plus, X, Building2, Mountain, Utensils, MapPin } from 'lucide-rea
 
 interface SubmissionFormProps {
   onClose: () => void
+  isModal?: boolean
 }
 
-export function SubmissionForm({ onClose }: SubmissionFormProps) {
+export function SubmissionForm({ onClose, isModal = true }: SubmissionFormProps) {
   const [formData, setFormData] = useState({
     type: 'development', // development, attraction, restaurant
     name: '',
@@ -86,7 +87,7 @@ Date: ${new Date().toLocaleString()}
 
   if (submitted) {
     return (
-      <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+      <div className={isModal ? "fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" : "flex items-center justify-center p-4"}>
         <div className="bg-white rounded-3xl p-8 max-w-md w-full text-center">
           <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
             <Send className="h-8 w-8 text-green-600" />
@@ -99,7 +100,7 @@ Date: ${new Date().toLocaleString()}
             onClick={onClose}
             className="px-6 py-3 bg-green-600 text-white rounded-2xl font-semibold hover:bg-green-700 transition-colors"
           >
-            Close
+            {isModal ? 'Close' : 'Back to Home'}
           </button>
         </div>
       </div>
@@ -107,8 +108,8 @@ Date: ${new Date().toLocaleString()}
   }
 
   return (
-    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-3xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+    <div className={isModal ? "fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" : ""}>
+      <div className={isModal ? "bg-white rounded-3xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto" : "bg-white rounded-3xl p-8 w-full shadow-2xl"}>
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 bg-gradient-to-r from-green-600 to-blue-600 rounded-full flex items-center justify-center">

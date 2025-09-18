@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'VisitABK - Discover Abeokuta',
-  description: 'Tracking application for developments in Kobape, Abeokuta - the future of green, eco-friendly and luxury living in Abeokuta',
+  description: 'Experience Abeokuta\'s rich cultural heritage, historic landmarks like Olumo Rock, vibrant local cuisine, and premium eco-friendly real estate opportunities. Your gateway to authentic Nigerian tourism and sustainable living in Ogun State.',
 }
 
 export default function RootLayout({

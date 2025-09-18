@@ -16,7 +16,7 @@ export function TourismHero() {
                 Explore the Gateway City
               </p>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Experience rich culture, invest in premium real estate, and explore the gateway to Ogun State's tourism renaissance
+              Discover historic landmarks, authentic Yoruba culture, vibrant markets, traditional cuisine, and sustainable investment opportunities in Nigeria's cultural heartland
             </p>
           </div>
           
@@ -62,10 +62,22 @@ export function TourismHero() {
           {/* Call to Action */}
           <div className="pt-8">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button className="px-8 py-4 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-2xl font-semibold text-lg hover:from-green-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl">
+              <button 
+                onClick={() => {
+                  const mapSection = document.getElementById('map-section')
+                  mapSection?.scrollIntoView({ behavior: 'smooth' })
+                }}
+                className="px-8 py-4 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-2xl font-semibold text-lg hover:from-green-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl"
+              >
                 Explore Real Estate
               </button>
-              <button className="px-8 py-4 bg-white/80 backdrop-blur-sm text-gray-700 rounded-2xl font-semibold text-lg hover:bg-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border border-gray-200">
+              <button 
+                onClick={() => {
+                  const attractionsSection = document.getElementById('attractions-section')
+                  attractionsSection?.scrollIntoView({ behavior: 'smooth' })
+                }}
+                className="px-8 py-4 bg-white/80 backdrop-blur-sm text-gray-700 rounded-2xl font-semibold text-lg hover:bg-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border border-gray-200"
+              >
                 Plan Your Visit
               </button>
             </div>
