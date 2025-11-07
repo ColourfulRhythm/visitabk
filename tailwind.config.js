@@ -16,6 +16,13 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['var(--font-lato)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-montserrat)', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-playfair)', 'Georgia', 'serif'],
+        elegant: ['var(--font-raleway)', 'system-ui', 'sans-serif'],
+        headline: ['var(--font-instrument)', 'Georgia', 'serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

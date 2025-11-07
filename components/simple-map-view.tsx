@@ -19,9 +19,9 @@ export function SimpleMapView() {
   return (
     <div className="relative h-full">
       {/* Interactive Map */}
-      <div className="w-full h-full rounded-3xl overflow-hidden bg-gradient-to-br from-blue-50 to-green-50 relative">
+      <div className="w-full h-full rounded-lg overflow-hidden bg-muted/30 relative">
         {/* Map Background with Grid */}
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 opacity-5">
           <div className="w-full h-full" style={{
             backgroundImage: `
               linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px),
@@ -34,26 +34,26 @@ export function SimpleMapView() {
         {/* Abeokuta Map Representation */}
         <div className="relative w-full h-full p-8">
           {/* Map Title */}
-          <div className="absolute top-4 left-4 bg-white/90 rounded-lg px-4 py-2 shadow-lg">
-            <h3 className="text-lg font-bold text-gray-900">Abeokuta, Ogun State</h3>
-            <p className="text-sm text-gray-600">16+ Locations</p>
+          <div className="absolute top-4 left-4 glass-subtle rounded-lg px-3 py-2 shadow-sm border border-border/50">
+            <h3 className="text-base font-semibold text-foreground">Abeokuta, Ogun State</h3>
+            <p className="text-xs text-muted-foreground">16+ Locations</p>
           </div>
 
           {/* Legend */}
-          <div className="absolute top-4 right-4 bg-white/90 rounded-lg p-4 shadow-lg">
-            <h4 className="text-sm font-semibold text-gray-900 mb-2">Legend</h4>
-            <div className="space-y-1">
+          <div className="absolute top-4 right-4 glass-subtle rounded-lg p-3 shadow-sm border border-border/50">
+            <h4 className="text-xs font-medium text-foreground mb-2">Legend</h4>
+            <div className="space-y-1.5">
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-green-600 rounded-full"></div>
-                <span className="text-xs text-gray-600">Developments</span>
+                <div className="w-2.5 h-2.5 bg-primary rounded-full"></div>
+                <span className="text-xs text-muted-foreground">Developments</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-orange-600 rounded-full"></div>
-                <span className="text-xs text-gray-600">Attractions</span>
+                <div className="w-2.5 h-2.5 bg-orange-500 rounded-full"></div>
+                <span className="text-xs text-muted-foreground">Attractions</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-blue-600 rounded-full"></div>
-                <span className="text-xs text-gray-600">Restaurants</span>
+                <div className="w-2.5 h-2.5 bg-blue-500 rounded-full"></div>
+                <span className="text-xs text-muted-foreground">Restaurants</span>
               </div>
             </div>
           </div>
@@ -63,9 +63,9 @@ export function SimpleMapView() {
             <button
               key={location.id}
               onClick={() => setSelectedLocation(location)}
-              className={`absolute w-6 h-6 rounded-full border-2 border-white shadow-lg hover:scale-125 transition-all duration-300 ${
-                location.color === 'green' ? 'bg-green-600' :
-                location.color === 'orange' ? 'bg-orange-600' : 'bg-blue-600'
+              className={`absolute w-5 h-5 rounded-full border-2 border-background shadow-md hover:scale-110 transition-all duration-200 ${
+                location.color === 'green' ? 'bg-primary' :
+                location.color === 'orange' ? 'bg-orange-500' : 'bg-blue-500'
               }`}
               style={{
                 left: `${((location.lng - 3.34) * 2000) + 200}px`,
@@ -77,13 +77,13 @@ export function SimpleMapView() {
 
           {/* Center Info */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="text-center space-y-4 bg-white/80 rounded-2xl p-8 shadow-xl">
-              <div className="w-16 h-16 bg-gradient-to-r from-green-600 to-blue-600 rounded-full flex items-center justify-center mx-auto">
-                <MapPin className="h-8 w-8 text-white" />
+            <div className="text-center space-y-3 glass-subtle rounded-lg p-6 shadow-sm border border-border/50">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto">
+                <MapPin className="h-6 w-6 text-primary" />
               </div>
-              <div className="space-y-2">
-                <h3 className="text-xl font-bold text-gray-900">Interactive Map</h3>
-                <p className="text-gray-600 max-w-sm text-sm">
+              <div className="space-y-1">
+                <h3 className="text-base font-semibold text-foreground">Interactive Map</h3>
+                <p className="text-muted-foreground max-w-xs text-sm">
                   Click on markers to explore developments, attractions, and restaurants
                 </p>
               </div>
@@ -93,29 +93,38 @@ export function SimpleMapView() {
 
         {/* Selected Location Details */}
         {selectedLocation && (
-          <div className="absolute bottom-4 left-4 right-4 bg-white rounded-2xl p-4 shadow-2xl">
+          <div className="absolute bottom-4 left-4 right-4 glass-subtle rounded-lg p-4 shadow-lg border border-border/50">
             <div className="flex items-start justify-between">
               <div className="flex items-center gap-3">
-                <div className={`w-8 h-8 rounded-full ${
-                  selectedLocation.color === 'green' ? 'bg-green-600' :
-                  selectedLocation.color === 'orange' ? 'bg-orange-600' : 'bg-blue-600'
+                <div className={`w-8 h-8 rounded-lg ${
+                  selectedLocation.color === 'green' ? 'bg-primary/10' :
+                  selectedLocation.color === 'orange' ? 'bg-orange-500/10' : 'bg-blue-500/10'
                 } flex items-center justify-center`}>
                   {selectedLocation.type === 'development' ? (
-                    <Building2 className="h-4 w-4 text-white" />
+                    <Building2 className={`h-4 w-4 ${
+                      selectedLocation.color === 'green' ? 'text-primary' :
+                      selectedLocation.color === 'orange' ? 'text-orange-500' : 'text-blue-500'
+                    }`} />
                   ) : selectedLocation.type === 'attraction' ? (
-                    <Mountain className="h-4 w-4 text-white" />
+                    <Mountain className={`h-4 w-4 ${
+                      selectedLocation.color === 'green' ? 'text-primary' :
+                      selectedLocation.color === 'orange' ? 'text-orange-500' : 'text-blue-500'
+                    }`} />
                   ) : (
-                    <Utensils className="h-4 w-4 text-white" />
+                    <Utensils className={`h-4 w-4 ${
+                      selectedLocation.color === 'green' ? 'text-primary' :
+                      selectedLocation.color === 'orange' ? 'text-orange-500' : 'text-blue-500'
+                    }`} />
                   )}
                 </div>
                 <div>
-                  <h4 className="font-bold text-gray-900">{selectedLocation.name}</h4>
-                  <p className="text-sm text-gray-600 capitalize">{selectedLocation.type}</p>
+                  <h4 className="font-semibold text-foreground text-sm">{selectedLocation.name}</h4>
+                  <p className="text-xs text-muted-foreground capitalize">{selectedLocation.type}</p>
                 </div>
               </div>
               <button
                 onClick={() => setSelectedLocation(null)}
-                className="text-gray-400 hover:text-gray-600"
+                className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 ×
               </button>

@@ -269,15 +269,15 @@ export function TourismDevelopmentsList() {
   const getStatusColor = (status: string) => {
     switch (status.toLowerCase()) {
       case 'pre-launch':
-        return 'bg-gradient-to-r from-yellow-400 to-orange-500 text-white'
+        return 'bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300'
       case 'selling':
-        return 'bg-gradient-to-r from-green-500 to-emerald-600 text-white'
+        return 'bg-primary/10 text-primary dark:bg-primary/20 dark:text-primary/90'
       case 'under development':
-        return 'bg-gradient-to-r from-blue-500 to-cyan-600 text-white'
+        return 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300'
       case 'completed':
-        return 'bg-gradient-to-r from-gray-500 to-slate-600 text-white'
+        return 'bg-muted text-muted-foreground'
       default:
-        return 'bg-gradient-to-r from-gray-500 to-slate-600 text-white'
+        return 'bg-muted text-muted-foreground'
     }
   }
 
@@ -293,14 +293,14 @@ export function TourismDevelopmentsList() {
   return (
     <div className="space-y-12">
       {/* Section Header */}
-      <div className="text-center space-y-4">
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+      <div className="text-center space-y-3">
+        <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground">
           Premium Real Estate Developments
         </h2>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
           Invest in Kobape's most innovative and sustainable real estate projects
         </p>
-        <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+        <p className="text-base text-muted-foreground/80 max-w-2xl mx-auto">
           From eco-friendly cottages to regenerative lifestyle cities, discover the future of living in Abeokuta
         </p>
       </div>
@@ -310,39 +310,38 @@ export function TourismDevelopmentsList() {
         {filteredDevelopments.map((development, index) => (
           <div
             key={development.id}
-            className="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
-            style={{ animationDelay: `${index * 100}ms` }}
+            className="group relative bg-card border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-200"
           >
             {/* Image */}
-            <div className="relative h-72 overflow-hidden">
+            <div className="relative h-64 overflow-hidden">
               <img
                 src={development.image}
                 alt={development.name}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
               
               {/* Status Badge */}
-              <div className="absolute top-6 left-6">
-                <span className={`px-4 py-2 rounded-full text-sm font-semibold ${getStatusColor(development.status)}`}>
+              <div className="absolute top-4 left-4">
+                <span className={`px-3 py-1.5 rounded-lg text-xs font-medium ${getStatusColor(development.status)}`}>
                   {development.status}
                 </span>
               </div>
 
               {/* Action Buttons */}
-              <div className="absolute top-6 right-6 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <button className="w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors">
-                  <Heart className="h-5 w-5 text-gray-600" />
+              <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                <button className="w-9 h-9 bg-background/90 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-background transition-colors shadow-sm">
+                  <Heart className="h-4 w-4 text-foreground" />
                 </button>
-                <button className="w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors">
-                  <Share2 className="h-5 w-5 text-gray-600" />
+                <button className="w-9 h-9 bg-background/90 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-background transition-colors shadow-sm">
+                  <Share2 className="h-4 w-4 text-foreground" />
                 </button>
               </div>
 
               {/* Size Badge */}
               {development.size_acres && (
-                <div className="absolute bottom-6 left-6">
-                  <div className="bg-white/90 backdrop-blur-sm px-3 py-2 rounded-full text-sm font-semibold text-gray-700">
+                <div className="absolute bottom-4 left-4">
+                  <div className="bg-background/90 backdrop-blur-sm px-3 py-1.5 rounded-lg text-sm font-medium text-foreground shadow-sm">
                     {development.size_acres} Acres
                   </div>
                 </div>
@@ -350,19 +349,19 @@ export function TourismDevelopmentsList() {
             </div>
 
             {/* Content */}
-            <div className="p-8 space-y-6">
-              <div className="space-y-3">
-                <h3 className="text-2xl font-bold text-gray-900 group-hover:text-green-600 transition-colors">
+            <div className="p-6 space-y-4">
+              <div className="space-y-2">
+                <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
                   {development.name}
                 </h3>
-                <div className="flex items-center gap-2 text-gray-600">
-                  <MapPin className="h-4 w-4" />
+                <div className="flex items-center gap-2 text-muted-foreground">
+                  <MapPin className="h-3.5 w-3.5" />
                   <span className="text-sm">{development.location}</span>
                 </div>
-                <p className="text-sm text-gray-500 font-medium">{development.developer}</p>
+                <p className="text-sm text-muted-foreground/80">{development.developer}</p>
               </div>
 
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
                 {development.description}
               </p>
 
@@ -371,7 +370,7 @@ export function TourismDevelopmentsList() {
                 {development.features.map((feature, idx) => (
                   <span
                     key={idx}
-                    className="px-3 py-1 bg-gradient-to-r from-green-50 to-blue-50 text-green-700 text-xs font-medium rounded-full border border-green-200"
+                    className="px-2.5 py-1 bg-muted text-foreground text-xs font-medium rounded-md"
                   >
                     {feature}
                   </span>
@@ -380,23 +379,23 @@ export function TourismDevelopmentsList() {
 
               {/* Pricing */}
               {development.price_per_sqm && (
-                <div className="text-2xl font-bold text-green-600">
+                <div className="text-xl font-semibold text-foreground">
                   {formatCurrency(development.price_per_sqm)}/sqm
                 </div>
               )}
 
               {/* Action Buttons */}
-              <div className="flex gap-3 pt-4">
+              <div className="flex gap-2 pt-2">
                 <button
                   onClick={() => setSelectedDevelopment(development)}
-                  className="flex-1 bg-gradient-to-r from-green-600 to-blue-600 text-white py-4 px-6 rounded-2xl font-semibold hover:from-green-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
+                  className="flex-1 bg-primary text-primary-foreground py-2.5 px-4 rounded-lg font-medium hover:bg-primary/90 transition-colors duration-200 shadow-sm flex items-center justify-center gap-2"
                 >
                   View Details
                   <ArrowRight className="h-4 w-4" />
                 </button>
                 <button
                   onClick={() => startEditing(development)}
-                  className="px-6 py-4 bg-gray-100 text-gray-700 rounded-2xl font-semibold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105"
+                  className="px-4 py-2.5 bg-muted text-foreground rounded-lg font-medium hover:bg-muted/80 transition-colors duration-200"
                   title="Edit this listing"
                 >
                   <Edit className="h-4 w-4" />
@@ -409,76 +408,76 @@ export function TourismDevelopmentsList() {
 
       {/* Edit Form Modal */}
       {editingId && editForm && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="p-8 space-y-6">
+        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-card border border-border rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-lg">
+            <div className="p-6 space-y-5">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-green-600 rounded-full flex items-center justify-center">
-                    <Edit className="h-6 w-6 text-white" />
+                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <Edit className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h2 className="text-2xl font-bold text-gray-900">Edit Listing</h2>
-                    <p className="text-gray-600">Update development information</p>
+                    <h2 className="text-xl font-semibold text-foreground">Edit Listing</h2>
+                    <p className="text-sm text-muted-foreground">Update development information</p>
                   </div>
                 </div>
                 <button
                   onClick={cancelEdit}
-                  className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors"
+                  className="w-9 h-9 bg-muted rounded-lg flex items-center justify-center hover:bg-muted/80 transition-colors"
                 >
-                  <X className="h-5 w-5" />
+                  <X className="h-4 w-4" />
                 </button>
               </div>
 
               <div className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                    <label className="block text-sm font-medium text-foreground mb-2">Name</label>
                     <input
                       type="text"
                       value={editForm.name}
                       onChange={(e) => setEditForm({...editForm, name: e.target.value})}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-ring focus:border-transparent"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Developer</label>
+                    <label className="block text-sm font-medium text-foreground mb-2">Developer</label>
                     <input
                       type="text"
                       value={editForm.developer}
                       onChange={(e) => setEditForm({...editForm, developer: e.target.value})}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-ring focus:border-transparent"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Location</label>
+                  <label className="block text-sm font-medium text-foreground mb-2">Location</label>
                   <input
                     type="text"
                     value={editForm.location}
                     onChange={(e) => setEditForm({...editForm, location: e.target.value})}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-ring focus:border-transparent"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Description</label>
+                  <label className="block text-sm font-medium text-foreground mb-2">Description</label>
                   <textarea
                     rows={4}
                     value={editForm.description}
                     onChange={(e) => setEditForm({...editForm, description: e.target.value})}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-ring focus:border-transparent"
                   />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Status</label>
+                    <label className="block text-sm font-medium text-foreground mb-2">Status</label>
                     <select
                       value={editForm.status}
                       onChange={(e) => setEditForm({...editForm, status: e.target.value})}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-ring focus:border-transparent"
                     >
                       <option value="pre-launch">Pre-launch</option>
                       <option value="selling">Selling</option>
@@ -487,78 +486,78 @@ export function TourismDevelopmentsList() {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Price per sqm</label>
+                    <label className="block text-sm font-medium text-foreground mb-2">Price per sqm</label>
                     <input
                       type="number"
                       value={editForm.price_per_sqm || ''}
                       onChange={(e) => setEditForm({...editForm, price_per_sqm: e.target.value ? parseInt(e.target.value) : undefined})}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-ring focus:border-transparent"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Size (Acres)</label>
+                    <label className="block text-sm font-medium text-foreground mb-2">Size (Acres)</label>
                     <input
                       type="number"
                       value={editForm.size_acres || ''}
                       onChange={(e) => setEditForm({...editForm, size_acres: e.target.value ? parseInt(e.target.value) : undefined})}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-ring focus:border-transparent"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Website</label>
+                    <label className="block text-sm font-medium text-foreground mb-2">Website</label>
                     <input
                       type="url"
                       value={editForm.website}
                       onChange={(e) => setEditForm({...editForm, website: e.target.value})}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-ring focus:border-transparent"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                    <label className="block text-sm font-medium text-foreground mb-2">Email</label>
                     <input
                       type="email"
                       value={editForm.email}
                       onChange={(e) => setEditForm({...editForm, email: e.target.value})}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-ring focus:border-transparent"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                    <label className="block text-sm font-medium text-foreground mb-2">Phone</label>
                     <input
                       type="tel"
                       value={editForm.phone}
                       onChange={(e) => setEditForm({...editForm, phone: e.target.value})}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-ring focus:border-transparent"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Features (comma-separated)</label>
+                  <label className="block text-sm font-medium text-foreground mb-2">Features (comma-separated)</label>
                   <input
                     type="text"
                     value={editForm.features ? editForm.features.join(', ') : ''}
                     onChange={(e) => setEditForm({...editForm, features: e.target.value.split(',').map(f => f.trim()).filter(f => f)})}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-ring focus:border-transparent"
                     placeholder="Eco-friendly, Luxury, Waterfront"
                   />
                 </div>
               </div>
 
-              <div className="flex gap-4">
+              <div className="flex gap-3">
                 <button
                   onClick={saveEdit}
-                  className="flex-1 px-6 py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white rounded-2xl font-semibold hover:from-blue-700 hover:to-green-700 transition-all duration-300 flex items-center justify-center gap-2"
+                  className="flex-1 px-4 py-2.5 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors duration-200 flex items-center justify-center gap-2"
                 >
-                  <Save className="h-5 w-5" />
+                  <Save className="h-4 w-4" />
                   Save Changes
                 </button>
                 <button
                   onClick={cancelEdit}
-                  className="px-6 py-4 bg-gray-100 text-gray-700 rounded-2xl font-semibold hover:bg-gray-200 transition-colors"
+                  className="px-4 py-2.5 bg-muted text-foreground rounded-lg font-medium hover:bg-muted/80 transition-colors duration-200"
                 >
                   Cancel
                 </button>
@@ -570,61 +569,61 @@ export function TourismDevelopmentsList() {
 
       {/* Development Details Modal */}
       {selectedDevelopment && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="p-8 space-y-6">
+        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-card border border-border rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-lg">
+            <div className="p-6 space-y-5">
               <div className="flex items-start justify-between">
                 <div>
-                  <h3 className="text-3xl font-bold text-gray-900">{selectedDevelopment.name}</h3>
-                  <p className="text-lg text-gray-600">{selectedDevelopment.developer}</p>
+                  <h3 className="text-2xl font-semibold text-foreground">{selectedDevelopment.name}</h3>
+                  <p className="text-base text-muted-foreground mt-1">{selectedDevelopment.developer}</p>
                 </div>
                 <button
                   onClick={() => setSelectedDevelopment(null)}
-                  className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors"
+                  className="w-9 h-9 bg-muted rounded-lg flex items-center justify-center hover:bg-muted/80 transition-colors"
                 >
                   ×
                 </button>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div className="space-y-4">
                   <div>
-                    <label className="text-sm font-medium text-gray-500">Location</label>
-                    <p className="text-lg">{selectedDevelopment.location}</p>
+                    <label className="text-sm font-medium text-muted-foreground">Location</label>
+                    <p className="text-base mt-1">{selectedDevelopment.location}</p>
                   </div>
                   {selectedDevelopment.price_per_sqm && (
                     <div>
-                      <label className="text-sm font-medium text-gray-500">Price per Square Meter</label>
-                      <p className="text-2xl font-bold text-green-600">
+                      <label className="text-sm font-medium text-muted-foreground">Price per Square Meter</label>
+                      <p className="text-xl font-semibold text-foreground mt-1">
                         {formatCurrency(selectedDevelopment.price_per_sqm)}
                       </p>
                     </div>
                   )}
                   {selectedDevelopment.size_acres && (
                     <div>
-                      <label className="text-sm font-medium text-gray-500">Size</label>
-                      <p className="text-lg font-semibold">{selectedDevelopment.size_acres} Acres</p>
+                      <label className="text-sm font-medium text-muted-foreground">Size</label>
+                      <p className="text-base font-medium mt-1">{selectedDevelopment.size_acres} Acres</p>
                     </div>
                   )}
                   <div>
-                    <label className="text-sm font-medium text-gray-500">Contact</label>
-                    <p className="text-sm">{selectedDevelopment.email}</p>
+                    <label className="text-sm font-medium text-muted-foreground">Contact</label>
+                    <p className="text-sm mt-1">{selectedDevelopment.email}</p>
                     <p className="text-sm">{selectedDevelopment.phone}</p>
                   </div>
                 </div>
                 
                 <div className="space-y-4">
                   <div>
-                    <label className="text-sm font-medium text-gray-500">Description</label>
-                    <p className="text-sm text-gray-600">{selectedDevelopment.description}</p>
+                    <label className="text-sm font-medium text-muted-foreground">Description</label>
+                    <p className="text-sm text-muted-foreground mt-1">{selectedDevelopment.description}</p>
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-gray-500">Features</label>
-                    <div className="flex flex-wrap gap-2">
+                    <label className="text-sm font-medium text-muted-foreground">Features</label>
+                    <div className="flex flex-wrap gap-2 mt-1">
                       {selectedDevelopment.features.map((feature: string, idx: number) => (
                         <span
                           key={idx}
-                          className="px-3 py-1 bg-gradient-to-r from-green-50 to-blue-50 text-green-700 text-xs font-medium rounded-full border border-green-200"
+                          className="px-2.5 py-1 bg-muted text-foreground text-xs font-medium rounded-md"
                         >
                           {feature}
                         </span>
@@ -634,11 +633,11 @@ export function TourismDevelopmentsList() {
                 </div>
               </div>
 
-              <div className="flex gap-4">
+              <div className="flex gap-3">
                 {selectedDevelopment.website && (
                   <button
                     onClick={() => window.open(selectedDevelopment.website, '_blank')}
-                    className="px-6 py-3 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-2xl font-semibold hover:from-green-700 hover:to-blue-700 transition-all duration-300 flex items-center gap-2"
+                    className="px-4 py-2.5 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors duration-200 flex items-center gap-2"
                   >
                     <ExternalLink className="h-4 w-4" />
                     Visit Website
@@ -646,7 +645,7 @@ export function TourismDevelopmentsList() {
                 )}
                 <button
                   onClick={() => setSelectedDevelopment(null)}
-                  className="px-6 py-3 bg-gray-100 text-gray-700 rounded-2xl font-semibold hover:bg-gray-200 transition-all duration-300"
+                  className="px-4 py-2.5 bg-muted text-foreground rounded-lg font-medium hover:bg-muted/80 transition-colors duration-200"
                 >
                   Close
                 </button>

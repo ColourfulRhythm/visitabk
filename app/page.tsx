@@ -20,7 +20,7 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <TourismHero />
 
@@ -35,24 +35,24 @@ export default function Home() {
       </div>
 
       {/* Tourist Attractions */}
-      <div id="attractions-section" className="bg-gradient-to-br from-orange-50 to-red-50 py-20">
+      <div id="attractions-section" className="bg-muted/30 py-20">
         <div className="max-w-7xl mx-auto px-6">
           <TourismAttractions />
         </div>
       </div>
 
       {/* Map Section */}
-      <div id="map-section" className="bg-gradient-to-br from-gray-50 to-blue-50 py-20">
+      <div id="map-section" className="bg-background py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground mb-3">
               Explore Abeokuta
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Discover real estate opportunities and tourist attractions in Nigeria's historic city
             </p>
           </div>
-          <div className="h-[500px] rounded-3xl overflow-hidden shadow-2xl">
+          <div className="h-[500px] rounded-xl overflow-hidden shadow-lg border border-border">
             <SimpleMapView />
           </div>
         </div>
@@ -63,7 +63,7 @@ export default function Home() {
         <div className="fixed top-6 right-6 z-40">
           <Link 
             href="/addyourlisting"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 text-sm font-semibold"
+            className="inline-flex items-center gap-2 px-4 py-2.5 bg-primary text-primary-foreground rounded-full shadow-sm hover:shadow-md transition-all duration-200 text-sm font-medium"
             title="Add your listing"
           >
             <Plus className="h-4 w-4" />

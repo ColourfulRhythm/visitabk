@@ -7,48 +7,48 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 0 0% 15%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 9%;
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 15%;
+    --card-foreground: 0 0% 9%;
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 15%;
-    --primary: 142 76% 36%; /* Softer Ogun Green */
+    --popover-foreground: 0 0% 9%;
+    --primary: 210 20% 25%; /* Muted blue-gray */
     --primary-foreground: 0 0% 100%;
-    --secondary: 38 92% 50%; /* Softer Gold */
-    --secondary-foreground: 0 0% 15%;
+    --secondary: 0 0% 50%; /* Subtle gray */
+    --secondary-foreground: 0 0% 100%;
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 45%;
-    --accent: 142 30% 95%;
-    --accent-foreground: 0 0% 15%;
-    --destructive: 0 84% 60%;
+    --accent: 210 20% 96%;
+    --accent-foreground: 210 20% 25%;
+    --destructive: 0 65% 50%;
     --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 88%;
-    --input: 0 0% 96%;
-    --ring: 142 76% 36%;
-    --radius: 0.5rem;
+    --border: 0 0% 90%;
+    --input: 0 0% 98%;
+    --ring: 210 20% 40%;
+    --radius: 12px;
   }
 
   .dark {
-    --background: 0 0% 8%;
-    --foreground: 0 0% 90%;
-    --card: 0 0% 12%;
-    --card-foreground: 0 0% 90%;
-    --popover: 0 0% 12%;
-    --popover-foreground: 0 0% 90%;
-    --primary: 142 76% 45%; /* Brighter green for dark mode */
-    --primary-foreground: 0 0% 100%;
-    --secondary: 38 92% 60%; /* Brighter gold for dark mode */
-    --secondary-foreground: 0 0% 15%;
-    --muted: 0 0% 18%;
-    --muted-foreground: 0 0% 65%;
-    --accent: 142 30% 20%;
-    --accent-foreground: 0 0% 90%;
-    --destructive: 0 62% 50%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 25%;
-    --input: 0 0% 18%;
-    --ring: 142 76% 45%;
+    --background: 0 0% 6%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 9%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 210 15% 65%; /* Softer for dark mode */
+    --primary-foreground: 0 0% 6%;
+    --secondary: 0 0% 60%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 210 15% 15%;
+    --accent-foreground: 210 15% 65%;
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 95%;
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 210 15% 50%;
   }
 }
 
@@ -61,92 +61,58 @@
   }
 }
 
-/* Bloomberg-style customizations */
-.bloomberg-bg {
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+/* Apple-style glassmorphism - subtle and refined */
+.glass-subtle {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.bloomberg-card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
+.dark .glass-subtle {
+  background: rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.bloomberg-text {
-  color: #00d4aa;
-}
-
-.bloomberg-accent {
-  color: #ff6b35;
-}
-
-.bloomberg-grid {
-  background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 20px 20px;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: hsl(var(--muted));
-}
-
-::-webkit-scrollbar-thumb {
-  background: hsl(var(--primary));
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--primary) / 0.8);
-}
-
-/* Enhanced card styles */
+/* Apple-style card - clean and minimal */
 .enhanced-card {
-  background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--card) / 0.95) 100%);
+  background: hsl(var(--card));
   border: 1px solid hsl(var(--border));
-  box-shadow: 0 2px 8px hsl(var(--primary) / 0.1);
-  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .enhanced-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px hsl(var(--primary) / 0.15);
-  border-color: hsl(var(--primary) / 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  border-color: hsl(var(--border));
 }
 
-/* Enhanced button styles */
+/* Apple-style button - solid, no gradients */
 .enhanced-button {
-  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary) / 0.9) 100%);
+  background: hsl(var(--primary));
   border: none;
   color: hsl(var(--primary-foreground));
   font-weight: 500;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 4px hsl(var(--primary) / 0.2);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .enhanced-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px hsl(var(--primary) / 0.3);
+  background: hsl(var(--primary) / 0.9);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
 .enhanced-button-outline {
   background: transparent;
-  border: 2px solid hsl(var(--primary));
-  color: hsl(var(--primary));
+  border: 1px solid hsl(var(--border));
+  color: hsl(var(--foreground));
   font-weight: 500;
-  transition: all 0.2s ease;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .enhanced-button-outline:hover {
-  background: hsl(var(--primary));
-  color: hsl(var(--primary-foreground));
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px hsl(var(--primary) / 0.2);
+  background: hsl(var(--muted));
+  border-color: hsl(var(--border));
 }
 
 /* Status badge enhancements */
@@ -159,14 +125,14 @@
   border-radius: 9999px;
 }
 
-/* Price display enhancement */
+/* Price display - subtle background */
 .price-display {
-  background: linear-gradient(135deg, hsl(var(--primary) / 0.1) 0%, hsl(var(--secondary) / 0.1) 100%);
-  border: 1px solid hsl(var(--primary) / 0.2);
-  border-radius: 0.5rem;
+  background: hsl(var(--muted));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
   padding: 0.5rem 1rem;
   font-weight: 600;
-  color: hsl(var(--primary));
+  color: hsl(var(--foreground));
 }
 
 /* Search bar enhancement */
@@ -240,77 +206,34 @@
   animation: pulse 2s ease-in-out infinite;
 }
 
-/* Glass morphism effects */
-.glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.glass-dark {
-  background: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
+/* Apple-style scrollbar - subtle and minimal */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: hsl(var(--muted));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #10b981, #3b82f6);
-  border-radius: 3px;
+  background: hsl(var(--border));
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #059669, #2563eb);
+  background: hsl(var(--muted-foreground) / 0.3);
 }
 
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(135deg, #10b981, #3b82f6, #8b5cf6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Hover effects */
+/* Apple-style hover effects - subtle and refined */
 .hover-lift {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hover-lift:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-}
-
-/* Button animations */
-.btn-animate {
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-animate::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s;
-}
-
-.btn-animate:hover::before {
-  left: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }

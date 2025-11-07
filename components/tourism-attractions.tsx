@@ -72,27 +72,27 @@ export function TourismAttractions() {
   const getTypeColor = (type: string) => {
     switch (type.toLowerCase()) {
       case 'historic landmark':
-        return 'bg-gradient-to-r from-orange-500 to-red-500 text-white'
+        return 'bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300'
       case 'restaurant & lounge':
-        return 'bg-gradient-to-r from-green-500 to-emerald-600 text-white'
+        return 'bg-primary/10 text-primary dark:bg-primary/20 dark:text-primary/90'
       case 'restaurant':
-        return 'bg-gradient-to-r from-blue-500 to-cyan-600 text-white'
+        return 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300'
       default:
-        return 'bg-gradient-to-r from-gray-500 to-slate-600 text-white'
+        return 'bg-muted text-muted-foreground'
     }
   }
 
   return (
     <div className="space-y-12">
       {/* Section Header */}
-      <div className="text-center space-y-4">
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+      <div className="text-center space-y-3">
+        <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground">
           Must-Visit Attractions
         </h2>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
           Experience Abeokuta's rich history, culture, and culinary delights
         </p>
-        <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+        <p className="text-base text-muted-foreground/80 max-w-2xl mx-auto">
           From ancient rock formations to modern dining experiences, discover what makes Abeokuta special
         </p>
       </div>
@@ -102,36 +102,35 @@ export function TourismAttractions() {
         {attractions.map((attraction, index) => (
           <div
             key={attraction.id}
-            className="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
-            style={{ animationDelay: `${index * 100}ms` }}
+            className="group relative bg-card border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-200"
           >
             {/* Image */}
             <div className="relative h-64 overflow-hidden">
               <img
                 src={attraction.image}
                 alt={attraction.name}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
               
               {/* Type Badge */}
               <div className="absolute top-4 left-4">
-                <span className={`px-4 py-2 rounded-full text-sm font-semibold ${getTypeColor(attraction.type)}`}>
+                <span className={`px-3 py-1.5 rounded-lg text-xs font-medium ${getTypeColor(attraction.type)}`}>
                   {attraction.type}
                 </span>
               </div>
 
               {/* Rating */}
               <div className="absolute top-4 right-4">
-                <div className="bg-white/90 backdrop-blur-sm px-3 py-2 rounded-full flex items-center gap-1">
-                  <Star className="h-4 w-4 text-yellow-500 fill-current" />
-                  <span className="text-sm font-semibold text-gray-700">{attraction.rating}</span>
+                <div className="bg-background/90 backdrop-blur-sm px-3 py-1.5 rounded-lg flex items-center gap-1 shadow-sm">
+                  <Star className="h-3.5 w-3.5 text-yellow-500 fill-current" />
+                  <span className="text-sm font-medium text-foreground">{attraction.rating}</span>
                 </div>
               </div>
 
               {/* Price/Hours */}
               <div className="absolute bottom-4 left-4">
-                <div className="bg-white/90 backdrop-blur-sm px-3 py-2 rounded-full text-sm font-semibold text-gray-700">
+                <div className="bg-background/90 backdrop-blur-sm px-3 py-1.5 rounded-lg text-sm font-medium text-foreground shadow-sm">
                   {attraction.price || attraction.hours}
                 </div>
               </div>
@@ -140,16 +139,16 @@ export function TourismAttractions() {
             {/* Content */}
             <div className="p-6 space-y-4">
               <div className="space-y-2">
-                <h3 className="text-2xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors">
+                <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
                   {attraction.name}
                 </h3>
-                <div className="flex items-center gap-2 text-gray-600">
-                  <MapPin className="h-4 w-4" />
+                <div className="flex items-center gap-2 text-muted-foreground">
+                  <MapPin className="h-3.5 w-3.5" />
                   <span className="text-sm">{attraction.location}</span>
                 </div>
               </div>
 
-              <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
+              <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">
                 {attraction.description}
               </p>
 
@@ -158,13 +157,13 @@ export function TourismAttractions() {
                 {attraction.features.slice(0, 3).map((feature, idx) => (
                   <span
                     key={idx}
-                    className="px-3 py-1 bg-gradient-to-r from-orange-50 to-red-50 text-orange-700 text-xs font-medium rounded-full border border-orange-200"
+                    className="px-2.5 py-1 bg-muted text-foreground text-xs font-medium rounded-md"
                   >
                     {feature}
                   </span>
                 ))}
                 {attraction.features.length > 3 && (
-                  <span className="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-medium rounded-full">
+                  <span className="px-2.5 py-1 bg-muted text-muted-foreground text-xs font-medium rounded-md">
                     +{attraction.features.length - 3} more
                   </span>
                 )}
@@ -173,7 +172,7 @@ export function TourismAttractions() {
               {/* Action Button */}
               <button
                 onClick={() => setSelectedAttraction(attraction)}
-                className="w-full bg-gradient-to-r from-orange-600 to-red-600 text-white py-3 px-6 rounded-2xl font-semibold hover:from-orange-700 hover:to-red-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                className="w-full bg-primary text-primary-foreground py-2.5 px-4 rounded-lg font-medium hover:bg-primary/90 transition-colors duration-200 shadow-sm"
               >
                 Learn More
               </button>
@@ -184,70 +183,70 @@ export function TourismAttractions() {
 
       {/* Attraction Details Modal */}
       {selectedAttraction && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="p-8 space-y-6">
+        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-card border border-border rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-lg">
+            <div className="p-6 space-y-5">
               <div className="flex items-start justify-between">
                 <div>
-                  <h3 className="text-3xl font-bold text-gray-900">{selectedAttraction.name}</h3>
-                  <p className="text-lg text-gray-600">{selectedAttraction.type}</p>
+                  <h3 className="text-2xl font-semibold text-foreground">{selectedAttraction.name}</h3>
+                  <p className="text-base text-muted-foreground mt-1">{selectedAttraction.type}</p>
                   <div className="flex items-center gap-2 mt-2">
-                    <MapPin className="h-4 w-4 text-gray-400" />
-                    <span className="text-sm text-gray-600">{selectedAttraction.location}</span>
+                    <MapPin className="h-3.5 w-3.5 text-muted-foreground" />
+                    <span className="text-sm text-muted-foreground">{selectedAttraction.location}</span>
                   </div>
                 </div>
                 <button
                   onClick={() => setSelectedAttraction(null)}
-                  className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors"
+                  className="w-9 h-9 bg-muted rounded-lg flex items-center justify-center hover:bg-muted/80 transition-colors"
                 >
                   ×
                 </button>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div className="space-y-4">
                   <div>
-                    <label className="text-sm font-medium text-gray-500">Description</label>
-                    <p className="text-sm text-gray-600">{selectedAttraction.description}</p>
+                    <label className="text-sm font-medium text-muted-foreground">Description</label>
+                    <p className="text-sm text-muted-foreground mt-1">{selectedAttraction.description}</p>
                   </div>
                   
                   {selectedAttraction.historical_significance && (
                     <div>
-                      <label className="text-sm font-medium text-gray-500">Historical Significance</label>
-                      <p className="text-sm text-gray-600">{selectedAttraction.historical_significance}</p>
+                      <label className="text-sm font-medium text-muted-foreground">Historical Significance</label>
+                      <p className="text-sm text-muted-foreground mt-1">{selectedAttraction.historical_significance}</p>
                     </div>
                   )}
 
                   {selectedAttraction.archaeological_importance && (
                     <div>
-                      <label className="text-sm font-medium text-gray-500">Archaeological Importance</label>
-                      <p className="text-sm text-gray-600">{selectedAttraction.archaeological_importance}</p>
+                      <label className="text-sm font-medium text-muted-foreground">Archaeological Importance</label>
+                      <p className="text-sm text-muted-foreground mt-1">{selectedAttraction.archaeological_importance}</p>
                     </div>
                   )}
 
                   {selectedAttraction.cuisine && (
                     <div>
-                      <label className="text-sm font-medium text-gray-500">Cuisine</label>
-                      <p className="text-sm text-gray-600">{selectedAttraction.cuisine}</p>
+                      <label className="text-sm font-medium text-muted-foreground">Cuisine</label>
+                      <p className="text-sm text-muted-foreground mt-1">{selectedAttraction.cuisine}</p>
                     </div>
                   )}
 
                   {selectedAttraction.height && (
                     <div>
-                      <label className="text-sm font-medium text-gray-500">Height</label>
-                      <p className="text-sm text-gray-600">{selectedAttraction.height}</p>
+                      <label className="text-sm font-medium text-muted-foreground">Height</label>
+                      <p className="text-sm text-muted-foreground mt-1">{selectedAttraction.height}</p>
                     </div>
                   )}
                 </div>
                 
                 <div className="space-y-4">
                   <div>
-                    <label className="text-sm font-medium text-gray-500">Features</label>
-                    <div className="flex flex-wrap gap-2">
+                    <label className="text-sm font-medium text-muted-foreground">Features</label>
+                    <div className="flex flex-wrap gap-2 mt-1">
                       {selectedAttraction.features.map((feature: string, idx: number) => (
                         <span
                           key={idx}
-                          className="px-3 py-1 bg-gradient-to-r from-orange-50 to-red-50 text-orange-700 text-xs font-medium rounded-full border border-orange-200"
+                          className="px-2.5 py-1 bg-muted text-foreground text-xs font-medium rounded-md"
                         >
                           {feature}
                         </span>
@@ -258,37 +257,37 @@ export function TourismAttractions() {
                   <div className="grid grid-cols-2 gap-4">
                     {selectedAttraction.hours && (
                       <div>
-                        <label className="text-sm font-medium text-gray-500">Hours</label>
-                        <div className="flex items-center gap-2">
-                          <Clock className="h-4 w-4 text-gray-400" />
-                          <span className="text-sm text-gray-600">{selectedAttraction.hours}</span>
+                        <label className="text-sm font-medium text-muted-foreground">Hours</label>
+                        <div className="flex items-center gap-2 mt-1">
+                          <Clock className="h-3.5 w-3.5 text-muted-foreground" />
+                          <span className="text-sm text-muted-foreground">{selectedAttraction.hours}</span>
                         </div>
                       </div>
                     )}
 
                     {selectedAttraction.price && (
                       <div>
-                        <label className="text-sm font-medium text-gray-500">Price</label>
-                        <span className="text-sm text-gray-600">{selectedAttraction.price}</span>
+                        <label className="text-sm font-medium text-muted-foreground">Price</label>
+                        <span className="text-sm text-muted-foreground block mt-1">{selectedAttraction.price}</span>
                       </div>
                     )}
 
                     {selectedAttraction.phone && (
                       <div>
-                        <label className="text-sm font-medium text-gray-500">Phone</label>
-                        <div className="flex items-center gap-2">
-                          <Phone className="h-4 w-4 text-gray-400" />
-                          <span className="text-sm text-gray-600">{selectedAttraction.phone}</span>
+                        <label className="text-sm font-medium text-muted-foreground">Phone</label>
+                        <div className="flex items-center gap-2 mt-1">
+                          <Phone className="h-3.5 w-3.5 text-muted-foreground" />
+                          <span className="text-sm text-muted-foreground">{selectedAttraction.phone}</span>
                         </div>
                       </div>
                     )}
 
                     {selectedAttraction.rating && (
                       <div>
-                        <label className="text-sm font-medium text-gray-500">Rating</label>
-                        <div className="flex items-center gap-1">
-                          <Star className="h-4 w-4 text-yellow-500 fill-current" />
-                          <span className="text-sm text-gray-600">{selectedAttraction.rating}/5</span>
+                        <label className="text-sm font-medium text-muted-foreground">Rating</label>
+                        <div className="flex items-center gap-1 mt-1">
+                          <Star className="h-3.5 w-3.5 text-yellow-500 fill-current" />
+                          <span className="text-sm text-muted-foreground">{selectedAttraction.rating}/5</span>
                         </div>
                       </div>
                     )}
@@ -296,11 +295,11 @@ export function TourismAttractions() {
                 </div>
               </div>
 
-              <div className="flex gap-4">
+              <div className="flex gap-3">
                 {selectedAttraction.website && (
                   <button
                     onClick={() => window.open(selectedAttraction.website, '_blank')}
-                    className="px-6 py-3 bg-gradient-to-r from-orange-600 to-red-600 text-white rounded-2xl font-semibold hover:from-orange-700 hover:to-red-700 transition-all duration-300 flex items-center gap-2"
+                    className="px-4 py-2.5 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors duration-200 flex items-center gap-2"
                   >
                     <Globe className="h-4 w-4" />
                     Visit Website
@@ -309,7 +308,7 @@ export function TourismAttractions() {
                 {selectedAttraction.instagram && (
                   <button
                     onClick={() => window.open(`https://instagram.com/${selectedAttraction.instagram.replace('@', '')}`, '_blank')}
-                    className="px-6 py-3 bg-gradient-to-r from-pink-600 to-purple-600 text-white rounded-2xl font-semibold hover:from-pink-700 hover:to-purple-700 transition-all duration-300 flex items-center gap-2"
+                    className="px-4 py-2.5 bg-muted text-foreground rounded-lg font-medium hover:bg-muted/80 transition-colors duration-200 flex items-center gap-2"
                   >
                     <ExternalLink className="h-4 w-4" />
                     Follow on Instagram
@@ -317,7 +316,7 @@ export function TourismAttractions() {
                 )}
                 <button
                   onClick={() => setSelectedAttraction(null)}
-                  className="px-6 py-3 bg-gray-100 text-gray-700 rounded-2xl font-semibold hover:bg-gray-200 transition-all duration-300"
+                  className="px-4 py-2.5 bg-muted text-foreground rounded-lg font-medium hover:bg-muted/80 transition-colors duration-200"
                 >
                   Close
                 </button>
