@@ -19,7 +19,7 @@ export function SimpleMapView() {
   return (
     <div className="relative h-full">
       {/* Interactive Map */}
-      <div className="w-full h-full rounded-lg overflow-hidden bg-muted/30 relative">
+      <div className="w-full h-full rounded-lg overflow-hidden bg-background-secondary/50 relative">
         {/* Map Background with Grid */}
         <div className="absolute inset-0 opacity-5">
           <div className="w-full h-full" style={{

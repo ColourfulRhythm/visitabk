@@ -7,47 +7,55 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    /* Apple-style background hierarchy - very subtle variations */
+    --background: 0 0% 100%; /* Primary: Main view background */
+    --background-secondary: 0 0% 98.5%; /* Secondary: For grouping content (very subtle) */
+    --background-tertiary: 0 0% 97%; /* Tertiary: For nested groups (subtle) */
+    
     --foreground: 0 0% 9%;
-    --card: 0 0% 100%;
+    --card: 0 0% 98.5%; /* Slightly off-white for depth */
     --card-foreground: 0 0% 9%;
-    --popover: 0 0% 100%;
+    --popover: 0 0% 98.5%;
     --popover-foreground: 0 0% 9%;
     --primary: 210 20% 25%; /* Muted blue-gray */
     --primary-foreground: 0 0% 100%;
     --secondary: 0 0% 50%; /* Subtle gray */
     --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 96%;
+    --muted: 0 0% 96.5%; /* Slightly adjusted for hierarchy */
     --muted-foreground: 0 0% 45%;
-    --accent: 210 20% 96%;
+    --accent: 210 20% 97%; /* Very subtle accent background */
     --accent-foreground: 210 20% 25%;
     --destructive: 0 65% 50%;
     --destructive-foreground: 0 0% 100%;
     --border: 0 0% 90%;
-    --input: 0 0% 98%;
+    --input: 0 0% 98%; /* Slightly different for inputs */
     --ring: 210 20% 40%;
     --radius: 12px;
   }
 
   .dark {
-    --background: 0 0% 6%;
+    /* Dark mode with subtle hierarchy */
+    --background: 0 0% 6%; /* Primary: Darkest for main view */
+    --background-secondary: 0 0% 7.5%; /* Secondary: Slightly lighter */
+    --background-tertiary: 0 0% 9%; /* Tertiary: Even lighter for depth */
+    
     --foreground: 0 0% 95%;
-    --card: 0 0% 9%;
+    --card: 0 0% 8%; /* Slightly lighter than background for cards */
     --card-foreground: 0 0% 95%;
-    --popover: 0 0% 9%;
+    --popover: 0 0% 8%;
     --popover-foreground: 0 0% 95%;
     --primary: 210 15% 65%; /* Softer for dark mode */
     --primary-foreground: 0 0% 6%;
     --secondary: 0 0% 60%;
     --secondary-foreground: 0 0% 95%;
-    --muted: 0 0% 15%;
+    --muted: 0 0% 14%; /* Slightly adjusted */
     --muted-foreground: 0 0% 70%;
-    --accent: 210 15% 15%;
+    --accent: 210 15% 12%; /* Very subtle in dark mode */
     --accent-foreground: 210 15% 65%;
     --destructive: 0 65% 55%;
     --destructive-foreground: 0 0% 95%;
     --border: 0 0% 20%;
-    --input: 0 0% 15%;
+    --input: 0 0% 12%; /* Slightly different for inputs */
     --ring: 210 15% 50%;
   }
 }
@@ -61,28 +69,29 @@
   }
 }
 
-/* Apple-style glassmorphism - subtle and refined */
+/* Apple-style glassmorphism - subtle and refined with dynamic backgrounds */
 .glass-subtle {
-  background: rgba(255, 255, 255, 0.7);
+  background: hsl(var(--background-secondary) / 0.8);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid hsl(var(--border) / 0.5);
 }
 
 .dark .glass-subtle {
-  background: rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: hsl(var(--background-secondary) / 0.6);
+  border: 1px solid hsl(var(--border) / 0.3);
 }
 
-/* Apple-style card - clean and minimal */
+/* Apple-style card - clean and minimal with background hierarchy */
 .enhanced-card {
-  background: hsl(var(--card));
+  background: hsl(var(--background-tertiary));
   border: 1px solid hsl(var(--border));
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .enhanced-card:hover {
+  background: hsl(var(--card));
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
   border-color: hsl(var(--border));
 }

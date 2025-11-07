@@ -63,6 +63,68 @@ const attractions = [
     hours: '10:00 AM - 11:00 PM',
     instagram: '@tamberma_abeokuta',
     phone: '+234 804 567 8901'
+  },
+  {
+    id: '5',
+    name: 'Deeper Life Camp',
+    type: 'Religious & Conference Center',
+    location: 'Kobape, Abeokuta, Ogun State',
+    description: 'Large religious and conference facility operated by Deeper Life Bible Church. Features extensive grounds, accommodation facilities, and conference halls. A significant landmark in the Kobape area.',
+    features: ['Conference Facilities', 'Accommodation', 'Large Grounds', 'Religious Center'],
+    image: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&h=600&fit=crop&crop=center',
+    rating: 4.6,
+    hours: '24/7 Access (by appointment)',
+    phone: '+234 805 678 9012'
+  },
+  {
+    id: '6',
+    name: 'President Buhari Estate',
+    type: 'Residential Estate & Landmark',
+    location: 'Kobape, Abeokuta, Ogun State',
+    description: 'Prestigious residential estate named after former President Muhammadu Buhari. A well-developed estate with modern infrastructure, security, and quality amenities. A reference point for other developments in the area.',
+    features: ['Prestigious Estate', 'Modern Infrastructure', 'Security', 'Quality Amenities'],
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=center',
+    rating: 4.7,
+    location_detail: 'Near Day Waterman College and Sagamu Interchange'
+  },
+  {
+    id: '7',
+    name: 'Moshood Abiola Polytechnic (MAPOLY)',
+    type: 'Educational Institution',
+    location: 'Abeokuta, Ogun State',
+    description: 'A prominent polytechnic institution in Ogun State offering various technical and vocational programs. Established to provide quality technical education and contribute to human capital development.',
+    features: ['Higher Education', 'Technical Programs', 'Vocational Training', 'Student Accommodation'],
+    image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&h=600&fit=crop&crop=center',
+    rating: 4.5,
+    hours: '7:00 AM - 6:00 PM',
+    website: 'https://mapoly.edu.ng',
+    phone: '+234 806 789 0123'
+  },
+  {
+    id: '8',
+    name: 'Abeokuta Polo Club',
+    type: 'Sports & Recreation',
+    location: 'Abeokuta, Ogun State',
+    description: 'Exclusive polo club offering equestrian sports and social events. Features well-maintained polo grounds, stables, and clubhouse facilities. A hub for polo enthusiasts and social gatherings.',
+    features: ['Polo Grounds', 'Equestrian Sports', 'Clubhouse', 'Social Events'],
+    image: 'https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?w=800&h=600&fit=crop&crop=center',
+    rating: 4.4,
+    hours: '8:00 AM - 8:00 PM',
+    phone: '+234 807 890 1234'
+  },
+  {
+    id: '9',
+    name: 'Day Waterman College',
+    type: 'Educational Institution',
+    location: 'Kobape, Abeokuta, Ogun State',
+    description: 'Premium co-educational boarding secondary school offering British curriculum. Known for excellent academic standards, modern facilities, and holistic education approach. A landmark educational institution in the Kobape area.',
+    features: ['British Curriculum', 'Boarding School', 'Modern Facilities', 'Academic Excellence'],
+    image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&h=600&fit=crop&crop=center',
+    rating: 4.8,
+    hours: '7:00 AM - 5:00 PM',
+    website: 'https://daywatermancollege.com',
+    phone: '+234 808 901 2345',
+    location_detail: 'Near President Buhari Estate and Sagamu Interchange'
   }
 ]
 
@@ -73,9 +135,19 @@ export function TourismAttractions() {
     switch (type.toLowerCase()) {
       case 'historic landmark':
         return 'bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300'
+      case 'historic & cultural complex':
+        return 'bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300'
       case 'restaurant & lounge':
         return 'bg-primary/10 text-primary dark:bg-primary/20 dark:text-primary/90'
       case 'restaurant':
+        return 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300'
+      case 'religious & conference center':
+        return 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300'
+      case 'residential estate & landmark':
+        return 'bg-primary/10 text-primary dark:bg-primary/20 dark:text-primary/90'
+      case 'educational institution':
+        return 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300'
+      case 'sports & recreation':
         return 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300'
       default:
         return 'bg-muted text-muted-foreground'
@@ -102,7 +174,7 @@ export function TourismAttractions() {
         {attractions.map((attraction, index) => (
           <div
             key={attraction.id}
-            className="group relative bg-card border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-200"
+            className="group relative bg-background-tertiary border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-200"
           >
             {/* Image */}
             <div className="relative h-64 overflow-hidden">
@@ -184,7 +256,7 @@ export function TourismAttractions() {
       {/* Attraction Details Modal */}
       {selectedAttraction && (
         <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-card border border-border rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-lg">
+          <div className="bg-background-tertiary border border-border rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-lg">
             <div className="p-6 space-y-5">
               <div className="flex items-start justify-between">
                 <div>
@@ -235,6 +307,12 @@ export function TourismAttractions() {
                     <div>
                       <label className="text-sm font-medium text-muted-foreground">Height</label>
                       <p className="text-sm text-muted-foreground mt-1">{selectedAttraction.height}</p>
+                    </div>
+                  )}
+                  {selectedAttraction.location_detail && (
+                    <div>
+                      <label className="text-sm font-medium text-muted-foreground">Location Details</label>
+                      <p className="text-sm text-muted-foreground mt-1">{selectedAttraction.location_detail}</p>
                     </div>
                   )}
                 </div>

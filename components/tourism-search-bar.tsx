@@ -9,7 +9,7 @@ export function TourismSearchBar() {
 
   return (
     <div className="relative">
-      <div className="glass-subtle rounded-xl shadow-sm border border-border/50 p-4">
+      <div className="bg-card/50 glass-subtle rounded-xl shadow-sm border border-border/50 p-4">
         <div className="flex flex-col lg:flex-row gap-3">
           {/* Search Input */}
           <div className="flex-1 relative">

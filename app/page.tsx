@@ -21,27 +21,31 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero Section */}
+      {/* Hero Section - Primary background */}
       <TourismHero />
 
-      {/* Search Section */}
-      <div className="max-w-4xl mx-auto px-6 py-12">
-        <TourismSearchBar />
+      {/* Search Section - Secondary background for subtle grouping */}
+      <div className="bg-background-secondary">
+        <div className="max-w-4xl mx-auto px-6 py-12">
+          <TourismSearchBar />
+        </div>
       </div>
 
-      {/* Real Estate Developments */}
-      <div className="max-w-7xl mx-auto px-6 pb-20">
-        <TourismDevelopmentsList />
+      {/* Real Estate Developments - Primary background */}
+      <div className="bg-background">
+        <div className="max-w-7xl mx-auto px-6 pb-20">
+          <TourismDevelopmentsList />
+        </div>
       </div>
 
-      {/* Tourist Attractions */}
-      <div id="attractions-section" className="bg-muted/30 py-20">
+      {/* Tourist Attractions - Secondary background for visual separation */}
+      <div id="attractions-section" className="bg-background-secondary py-20">
         <div className="max-w-7xl mx-auto px-6">
           <TourismAttractions />
         </div>
       </div>
 
-      {/* Map Section */}
+      {/* Map Section - Primary background */}
       <div id="map-section" className="bg-background py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">

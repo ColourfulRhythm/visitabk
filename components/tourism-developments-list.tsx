@@ -200,6 +200,66 @@ const realDevelopments = [
     image: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=center',
     features: ['Mini-City Concept', '200 Acres', 'Mixed-use', 'Large-scale Investment'],
     created_at: '2024-01-21'
+  },
+  {
+    id: '13',
+    name: 'Nigerian Civil Service Union Estate',
+    location: 'Kobape, Abeokuta, Ogun State',
+    developer: 'Nigerian Civil Service Union',
+    status: 'selling',
+    description: 'Exclusive residential estate developed by the Nigerian Civil Service Union for its members and the general public. Features well-planned layouts, modern infrastructure, and secure environment.',
+    email: 'info@ncsu-estate.com',
+    phone: '+234 811 234 5678',
+    gps_lat: 7.1694,
+    gps_lng: 3.3601,
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=center',
+    features: ['Union Estate', 'Secure Environment', 'Modern Infrastructure', 'Well-Planned Layouts'],
+    created_at: '2024-01-23'
+  },
+  {
+    id: '14',
+    name: 'Nigerian Medical Association Estate',
+    location: 'Kobape, Abeokuta, Ogun State',
+    developer: 'Nigerian Medical Association',
+    status: 'selling',
+    description: 'Premium residential estate designed for medical professionals and their families. Features quality infrastructure, serene environment, and proximity to healthcare facilities.',
+    email: 'info@nma-estate.com',
+    phone: '+234 812 345 6789',
+    gps_lat: 7.1704,
+    gps_lng: 3.3611,
+    image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop&crop=center',
+    features: ['Medical Professionals', 'Quality Infrastructure', 'Serene Environment', 'Healthcare Proximity'],
+    created_at: '2024-01-24'
+  },
+  {
+    id: '15',
+    name: 'Association of Civil Servants of Nigeria Ogun State Estate',
+    location: 'Kobape, Abeokuta, Ogun State',
+    developer: 'Association of Civil Servants of Nigeria (Ogun State Branch)',
+    status: 'selling',
+    description: 'Residential estate developed by the Association of Civil Servants of Nigeria, Ogun State branch. Designed for civil servants and public sector workers with affordable pricing and flexible payment plans.',
+    email: 'info@acsn-ogun-estate.com',
+    phone: '+234 813 456 7890',
+    gps_lat: 7.1714,
+    gps_lng: 3.3621,
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=center',
+    features: ['Civil Servants', 'Affordable Pricing', 'Flexible Payment', 'Public Sector Workers'],
+    created_at: '2024-01-25'
+  },
+  {
+    id: '16',
+    name: 'Savings Scheme Estate',
+    location: 'Kobape, Abeokuta, Ogun State',
+    developer: 'Savings Scheme Cooperative',
+    status: 'selling',
+    description: 'Residential estate developed through a cooperative savings scheme. Affordable housing solution with flexible payment terms and community-oriented design.',
+    email: 'info@savingsscheme-estate.com',
+    phone: '+234 814 567 8901',
+    gps_lat: 7.1724,
+    gps_lng: 3.3631,
+    image: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=center',
+    features: ['Cooperative Scheme', 'Affordable Housing', 'Flexible Payment Terms', 'Community-Oriented'],
+    created_at: '2024-01-26'
   }
 ]
 
@@ -310,7 +370,7 @@ export function TourismDevelopmentsList() {
         {filteredDevelopments.map((development, index) => (
           <div
             key={development.id}
-            className="group relative bg-card border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-200"
+            className="group relative bg-background-tertiary border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-200"
           >
             {/* Image */}
             <div className="relative h-64 overflow-hidden">
@@ -409,7 +469,7 @@ export function TourismDevelopmentsList() {
       {/* Edit Form Modal */}
       {editingId && editForm && (
         <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-card border border-border rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-lg">
+          <div className="bg-background-tertiary border border-border rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-lg">
             <div className="p-6 space-y-5">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -570,7 +630,7 @@ export function TourismDevelopmentsList() {
       {/* Development Details Modal */}
       {selectedDevelopment && (
         <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-card border border-border rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-lg">
+          <div className="bg-background-tertiary border border-border rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-lg">
             <div className="p-6 space-y-5">
               <div className="flex items-start justify-between">
                 <div>

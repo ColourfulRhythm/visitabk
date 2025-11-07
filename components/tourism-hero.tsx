@@ -25,7 +25,7 @@ export function TourismHero() {
               <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto">
                 <Building2 className="h-6 w-6 text-primary" />
               </div>
-              <div className="text-2xl font-semibold text-foreground">12+</div>
+              <div className="text-2xl font-semibold text-foreground">16+</div>
               <div className="text-sm text-muted-foreground font-medium">Premium Developments</div>
               <div className="text-xs text-muted-foreground/70">In Kobape</div>
             </div>
