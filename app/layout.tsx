@@ -30,7 +30,7 @@ const raleway = Raleway({
 
 const instrumentSerif = Instrument_Serif({ 
   subsets: ['latin'],
-  weight: ['400', '700'],
+  weight: ['400'],
   variable: '--font-instrument',
   display: 'swap',
 })
