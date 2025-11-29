@@ -31,7 +31,7 @@ const realDevelopments = [
     status: 'pre-launch',
     size_acres: 84,
     description: '84-acre regenerative lifestyle city with four distinct zones: Residential, Wellness Hub, True Vine Villas, and Hygge Town. Positioned as Ogun\'s first regenerative tourism & content destination.',
-    website: 'https://focalpointproperties.com',
+    website: 'https://www.2seasonsabk.store',
     email: '2seasonsabk@gmail.com',
     phone: '08156901392, 07071670649',
     gps_lat: 7.1584,
