@@ -29,15 +29,15 @@ const realDevelopments = [
     location: 'Kobape, Abeokuta',
     developer: 'Focal Point Property Development & Management Services Ltd.',
     status: 'pre-launch',
-    size_acres: 74,
-    description: '74-acre regenerative lifestyle city with four distinct zones: Residential, Wellness Hub, True Vine Villas, and Hygge Town. Positioned as Ogun\'s first regenerative tourism & content destination.',
+    size_acres: 84,
+    description: '84-acre regenerative lifestyle city with four distinct zones: Residential, Wellness Hub, True Vine Villas, and Hygge Town. Positioned as Ogun\'s first regenerative tourism & content destination.',
     website: 'https://focalpointproperties.com',
     email: '2seasonsabk@gmail.com',
     phone: '08156901392, 07071670649',
     gps_lat: 7.1584,
     gps_lng: 3.3491,
     image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=center',
-    features: ['Regenerative City', '4 Zones', 'Tourism Destination', '74 Acres'],
+    features: ['Regenerative City', '4 Zones', 'Tourism Destination', '84 Acres'],
     created_at: '2024-01-10'
   },
   {
@@ -292,6 +292,22 @@ const realDevelopments = [
     image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop&crop=center',
     features: ['Gated Community', '24/7 Security', 'Polo Course', 'Smart Estate', 'Recreational Facilities'],
     created_at: '2024-01-28'
+  },
+  {
+    id: '19',
+    name: 'Hidden Leaf Village',
+    location: 'Kobape, Abeokuta, Ogun State',
+    developer: 'Focal Point Property Development & Management Services Ltd.',
+    status: 'selling',
+    description: 'A serene mini resort featuring 18 cabins nestled among fruit trees. Perfect for nature lovers with hiking paths, hill climbing opportunities, a tranquil pond, gym facilities, outdoor restaurant, and spa services. An ideal getaway destination in the heart of Kobape.',
+    website: 'https://focalpointproperties.com',
+    email: '2seasonsabk@gmail.com',
+    phone: '08156901392, 07071670649',
+    gps_lat: 7.1754,
+    gps_lng: 3.3661,
+    image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=600&fit=crop&crop=center',
+    features: ['Mini Resort', '18 Cabins', 'Fruit Trees', 'Hiking Paths', 'Hill Climbing', 'Pond', 'Gym', 'Outdoor Restaurant', 'Spa'],
+    created_at: '2024-01-29'
   }
 ]
 
