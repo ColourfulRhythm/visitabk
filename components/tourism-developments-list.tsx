@@ -32,8 +32,8 @@ const realDevelopments = [
     size_acres: 74,
     description: '74-acre regenerative lifestyle city with four distinct zones: Residential, Wellness Hub, True Vine Villas, and Hygge Town. Positioned as Ogun\'s first regenerative tourism & content destination.',
     website: 'https://focalpointproperties.com',
-    email: 'contact@focalpointproperties.com',
-    phone: '+234 802 345 6789',
+    email: '2seasonsabk@gmail.com',
+    phone: '08156901392, 07071670649',
     gps_lat: 7.1584,
     gps_lng: 3.3491,
     image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=center',
@@ -52,7 +52,7 @@ const realDevelopments = [
     phone: '+234 803 456 7890',
     gps_lat: 7.1594,
     gps_lng: 3.3501,
-    image: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=center',
+    image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&h=600&fit=crop&crop=center',
     features: ['Hybrid Investment', 'Farming Operations', 'Yearly ROI', 'Agricultural Focus'],
     created_at: '2024-01-20'
   },
@@ -197,7 +197,7 @@ const realDevelopments = [
     phone: '+234 810 123 4567',
     gps_lat: 7.1684,
     gps_lng: 3.3591,
-    image: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=center',
+    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop&crop=center',
     features: ['Mini-City Concept', '200 Acres', 'Mixed-use', 'Large-scale Investment'],
     created_at: '2024-01-21'
   },
@@ -257,9 +257,41 @@ const realDevelopments = [
     phone: '+234 814 567 8901',
     gps_lat: 7.1724,
     gps_lng: 3.3631,
-    image: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=center',
+    image: 'https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=800&h=600&fit=crop&crop=center',
     features: ['Cooperative Scheme', 'Affordable Housing', 'Flexible Payment Terms', 'Community-Oriented'],
     created_at: '2024-01-26'
+  },
+  {
+    id: '17',
+    name: 'Kinshasa Africa Kobape',
+    location: 'Kobape, Abeokuta, Ogun State',
+    developer: 'Orbit Africa Properties',
+    status: 'pre-launch',
+    description: 'A serene and secure residential estate launched in November 2023. Designed to address Nigeria\'s housing challenges while providing quality living spaces. The estate offers opportunities for both young entrepreneurs and established investors.',
+    website: 'https://orbitafricaproperties.com',
+    email: 'info@orbitafricaproperties.com',
+    phone: '+234 815 678 9012',
+    gps_lat: 7.1734,
+    gps_lng: 3.3641,
+    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&crop=center',
+    features: ['Serene Environment', 'Secure Community', 'Youth-Friendly', 'Quality Living'],
+    created_at: '2024-01-27'
+  },
+  {
+    id: '18',
+    name: 'Beryl Polo Estate',
+    location: 'Kobape, Abeokuta, Ogun State',
+    developer: 'Gtext Land',
+    status: 'selling',
+    description: 'Green and smart residential estate featuring a gated community with 24/7 security, recreational facilities including polo course, centralized sewage and water systems. Well-planned development with good road networks and modern infrastructure.',
+    website: 'https://gtextland.com',
+    email: 'info@gtextland.com',
+    phone: '+234 816 789 0123',
+    gps_lat: 7.1744,
+    gps_lng: 3.3651,
+    image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop&crop=center',
+    features: ['Gated Community', '24/7 Security', 'Polo Course', 'Smart Estate', 'Recreational Facilities'],
+    created_at: '2024-01-28'
   }
 ]
 
