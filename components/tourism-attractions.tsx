@@ -134,125 +134,115 @@ export function TourismAttractions() {
   const getTypeColor = (type: string) => {
     switch (type.toLowerCase()) {
       case 'historic landmark':
-        return 'bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300'
+        return 'bg-orange-50 text-orange-700 border border-orange-200'
       case 'historic & cultural complex':
-        return 'bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300'
+        return 'bg-orange-50 text-orange-700 border border-orange-200'
       case 'restaurant & lounge':
-        return 'bg-primary/10 text-primary dark:bg-primary/20 dark:text-primary/90'
+        return 'bg-rose-50 text-rose-700 border border-rose-200'
       case 'restaurant':
-        return 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300'
+        return 'bg-rose-50 text-rose-700 border border-rose-200'
       case 'religious & conference center':
-        return 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300'
+        return 'bg-purple-50 text-purple-700 border border-purple-200'
       case 'residential estate & landmark':
-        return 'bg-primary/10 text-primary dark:bg-primary/20 dark:text-primary/90'
+        return 'bg-emerald-50 text-emerald-700 border border-emerald-200'
       case 'educational institution':
-        return 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300'
+        return 'bg-blue-50 text-blue-700 border border-blue-200'
       case 'sports & recreation':
-        return 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300'
+        return 'bg-teal-50 text-teal-700 border border-teal-200'
       default:
-        return 'bg-muted text-muted-foreground'
+        return 'bg-slate-100 text-slate-600 border border-slate-200'
     }
   }
 
   return (
-    <div className="space-y-16 bg-gradient-to-b from-white via-slate-50 to-white py-20">
-      {/* Ultra-Luxury Section Header */}
-      <div className="text-center space-y-6 max-w-5xl mx-auto px-6">
-        <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/10 border border-amber-500/20 rounded-full text-xs font-semibold text-amber-600 uppercase tracking-[0.2em] mb-4">
-          <span>Curated Experiences</span>
-        </div>
-        <h2 className="text-5xl md:text-6xl lg:text-7xl font-headline font-bold text-slate-900 leading-tight">
-          <span className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent">
-            Must-Visit
-          </span>
-          <span className="block mt-2 bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 bg-clip-text text-transparent">
-            Attractions
-          </span>
+    <div className="space-y-12 py-20 bg-white">
+      {/* Section Header */}
+      <div className="text-center space-y-4 max-w-3xl mx-auto px-6">
+        <p className="text-sm font-medium text-[#2d4a3e] uppercase tracking-wider">Explore the Area</p>
+        <h2 className="text-4xl md:text-5xl font-serif text-slate-900">
+          Attractions & Landmarks
         </h2>
-        <p className="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-light">
-          Experience the rich tapestry of history, culture, and culinary excellence that defines this extraordinary destination
-        </p>
-        <p className="text-base text-slate-500 max-w-2xl mx-auto font-light italic">
-          From ancient landmarks to world-class dining, each experience is carefully curated for the discerning traveler
+        <p className="text-lg text-slate-600 leading-relaxed">
+          From the historic Olumo Rock to modern dining experiences, discover what makes Abeokuta special.
         </p>
       </div>
 
-      {/* Ultra-Luxury Attractions Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-6">
+      {/* Attractions Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto px-6">
         {attractions.map((attraction, index) => (
           <div
             key={attraction.id}
-            className="group relative bg-white border border-slate-200/60 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+            className="group bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300"
           >
-            {/* Luxury Image */}
-            <div className="relative h-80 overflow-hidden">
+            {/* Image */}
+            <div className="relative h-56 overflow-hidden">
               <img
                 src={attraction.image}
                 alt={attraction.name}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
               
-              {/* Luxury Type Badge */}
-              <div className="absolute top-6 left-6">
-                <span className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider backdrop-blur-xl shadow-xl ${getTypeColor(attraction.type)}`}>
+              {/* Type Badge */}
+              <div className="absolute top-4 left-4">
+                <span className={`px-3 py-1 rounded-full text-xs font-medium ${getTypeColor(attraction.type)}`}>
                   {attraction.type}
                 </span>
               </div>
 
-              {/* Luxury Rating */}
-              <div className="absolute top-6 right-6">
-                <div className="bg-white/95 backdrop-blur-xl px-4 py-2 rounded-xl flex items-center gap-2 shadow-xl">
-                  <Star className="h-4 w-4 text-amber-500 fill-current" />
-                  <span className="text-sm font-bold text-slate-900">{attraction.rating}</span>
+              {/* Rating */}
+              <div className="absolute top-4 right-4">
+                <div className="bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-lg flex items-center gap-1">
+                  <Star className="h-3.5 w-3.5 text-amber-500 fill-current" />
+                  <span className="text-sm font-medium text-slate-800">{attraction.rating}</span>
                 </div>
               </div>
 
-              {/* Luxury Price/Hours */}
-              <div className="absolute bottom-6 left-6">
-                <div className="bg-gradient-to-r from-amber-500/90 to-amber-400/90 backdrop-blur-xl px-4 py-2 rounded-xl text-sm font-bold text-white shadow-2xl">
+              {/* Price/Hours */}
+              <div className="absolute bottom-4 left-4">
+                <div className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg text-sm font-medium text-slate-800">
                   {attraction.price || attraction.hours}
                 </div>
               </div>
             </div>
 
-            {/* Luxury Content */}
-            <div className="p-8 space-y-6 bg-white">
-              <div className="space-y-3">
-                <h3 className="text-2xl font-bold text-slate-900 group-hover:text-amber-600 transition-colors duration-300 leading-tight">
+            {/* Content */}
+            <div className="p-5 space-y-4">
+              <div className="space-y-2">
+                <h3 className="text-lg font-semibold text-slate-900 group-hover:text-[#2d4a3e] transition-colors line-clamp-1">
                   {attraction.name}
                 </h3>
                 <div className="flex items-center gap-2 text-slate-500">
-                  <MapPin className="h-4 w-4 text-amber-500" />
-                  <span className="text-sm font-medium">{attraction.location}</span>
+                  <MapPin className="h-3.5 w-3.5 flex-shrink-0" />
+                  <span className="text-sm line-clamp-1">{attraction.location}</span>
                 </div>
               </div>
 
-              <p className="text-slate-600 text-sm leading-relaxed line-clamp-3 font-light">
+              <p className="text-sm text-slate-600 leading-relaxed line-clamp-3">
                 {attraction.description}
               </p>
 
-              {/* Luxury Features */}
-              <div className="flex flex-wrap gap-2">
+              {/* Features */}
+              <div className="flex flex-wrap gap-1.5">
                 {attraction.features.slice(0, 3).map((feature, idx) => (
                   <span
                     key={idx}
-                    className="px-3 py-1.5 bg-gradient-to-r from-slate-100 to-slate-50 border border-slate-200 text-slate-700 text-xs font-semibold rounded-lg shadow-sm"
+                    className="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded-md"
                   >
                     {feature}
                   </span>
                 ))}
                 {attraction.features.length > 3 && (
-                  <span className="px-3 py-1.5 bg-gradient-to-r from-amber-500 to-amber-400 text-white text-xs font-bold rounded-lg shadow-lg">
-                    +{attraction.features.length - 3} More
+                  <span className="px-2 py-1 bg-[#2d4a3e]/10 text-[#2d4a3e] text-xs font-medium rounded-md">
+                    +{attraction.features.length - 3}
                   </span>
                 )}
               </div>
 
-              {/* Luxury Action Button */}
+              {/* Action Button */}
               <button
                 onClick={() => setSelectedAttraction(attraction)}
-                className="w-full bg-gradient-to-r from-amber-500 to-amber-400 text-white py-3.5 px-6 rounded-xl font-bold text-sm hover:from-amber-600 hover:to-amber-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                className="w-full bg-[#2d4a3e] text-white py-2.5 px-4 rounded-lg font-medium text-sm hover:bg-[#3d5a4e] transition-colors duration-200"
               >
                 Learn More
               </button>
@@ -263,21 +253,21 @@ export function TourismAttractions() {
 
       {/* Attraction Details Modal */}
       {selectedAttraction && (
-        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-background-tertiary border border-border rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-lg">
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
             <div className="p-6 space-y-5">
               <div className="flex items-start justify-between">
                 <div>
-                  <h3 className="text-2xl font-semibold text-foreground">{selectedAttraction.name}</h3>
-                  <p className="text-base text-muted-foreground mt-1">{selectedAttraction.type}</p>
+                  <h3 className="text-2xl font-semibold text-slate-900">{selectedAttraction.name}</h3>
+                  <p className="text-base text-slate-500 mt-1">{selectedAttraction.type}</p>
                   <div className="flex items-center gap-2 mt-2">
-                    <MapPin className="h-3.5 w-3.5 text-muted-foreground" />
-                    <span className="text-sm text-muted-foreground">{selectedAttraction.location}</span>
+                    <MapPin className="h-3.5 w-3.5 text-slate-400" />
+                    <span className="text-sm text-slate-500">{selectedAttraction.location}</span>
                   </div>
                 </div>
                 <button
                   onClick={() => setSelectedAttraction(null)}
-                  className="w-9 h-9 bg-muted rounded-lg flex items-center justify-center hover:bg-muted/80 transition-colors"
+                  className="w-9 h-9 bg-slate-100 rounded-lg flex items-center justify-center hover:bg-slate-200 transition-colors"
                 >
                   ×
                 </button>
@@ -286,53 +276,53 @@ export function TourismAttractions() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div className="space-y-4">
                   <div>
-                    <label className="text-sm font-medium text-muted-foreground">Description</label>
-                    <p className="text-sm text-muted-foreground mt-1">{selectedAttraction.description}</p>
+                    <label className="text-sm font-medium text-slate-500">Description</label>
+                    <p className="text-sm text-slate-600 mt-1">{selectedAttraction.description}</p>
                   </div>
                   
                   {selectedAttraction.historical_significance && (
                     <div>
-                      <label className="text-sm font-medium text-muted-foreground">Historical Significance</label>
-                      <p className="text-sm text-muted-foreground mt-1">{selectedAttraction.historical_significance}</p>
+                      <label className="text-sm font-medium text-slate-500">Historical Significance</label>
+                      <p className="text-sm text-slate-600 mt-1">{selectedAttraction.historical_significance}</p>
                     </div>
                   )}
 
                   {selectedAttraction.archaeological_importance && (
                     <div>
-                      <label className="text-sm font-medium text-muted-foreground">Archaeological Importance</label>
-                      <p className="text-sm text-muted-foreground mt-1">{selectedAttraction.archaeological_importance}</p>
+                      <label className="text-sm font-medium text-slate-500">Archaeological Importance</label>
+                      <p className="text-sm text-slate-600 mt-1">{selectedAttraction.archaeological_importance}</p>
                     </div>
                   )}
 
                   {selectedAttraction.cuisine && (
                     <div>
-                      <label className="text-sm font-medium text-muted-foreground">Cuisine</label>
-                      <p className="text-sm text-muted-foreground mt-1">{selectedAttraction.cuisine}</p>
+                      <label className="text-sm font-medium text-slate-500">Cuisine</label>
+                      <p className="text-sm text-slate-600 mt-1">{selectedAttraction.cuisine}</p>
                     </div>
                   )}
 
                   {selectedAttraction.height && (
                     <div>
-                      <label className="text-sm font-medium text-muted-foreground">Height</label>
-                      <p className="text-sm text-muted-foreground mt-1">{selectedAttraction.height}</p>
+                      <label className="text-sm font-medium text-slate-500">Height</label>
+                      <p className="text-sm text-slate-600 mt-1">{selectedAttraction.height}</p>
                     </div>
                   )}
                   {selectedAttraction.location_detail && (
                     <div>
-                      <label className="text-sm font-medium text-muted-foreground">Location Details</label>
-                      <p className="text-sm text-muted-foreground mt-1">{selectedAttraction.location_detail}</p>
+                      <label className="text-sm font-medium text-slate-500">Location Details</label>
+                      <p className="text-sm text-slate-600 mt-1">{selectedAttraction.location_detail}</p>
                     </div>
                   )}
                 </div>
                 
                 <div className="space-y-4">
                   <div>
-                    <label className="text-sm font-medium text-muted-foreground">Features</label>
+                    <label className="text-sm font-medium text-slate-500">Features</label>
                     <div className="flex flex-wrap gap-2 mt-1">
                       {selectedAttraction.features.map((feature: string, idx: number) => (
                         <span
                           key={idx}
-                          className="px-2.5 py-1 bg-muted text-foreground text-xs font-medium rounded-md"
+                          className="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-md"
                         >
                           {feature}
                         </span>
@@ -343,37 +333,37 @@ export function TourismAttractions() {
                   <div className="grid grid-cols-2 gap-4">
                     {selectedAttraction.hours && (
                       <div>
-                        <label className="text-sm font-medium text-muted-foreground">Hours</label>
+                        <label className="text-sm font-medium text-slate-500">Hours</label>
                         <div className="flex items-center gap-2 mt-1">
-                          <Clock className="h-3.5 w-3.5 text-muted-foreground" />
-                          <span className="text-sm text-muted-foreground">{selectedAttraction.hours}</span>
+                          <Clock className="h-3.5 w-3.5 text-slate-400" />
+                          <span className="text-sm text-slate-600">{selectedAttraction.hours}</span>
                         </div>
                       </div>
                     )}
 
                     {selectedAttraction.price && (
                       <div>
-                        <label className="text-sm font-medium text-muted-foreground">Price</label>
-                        <span className="text-sm text-muted-foreground block mt-1">{selectedAttraction.price}</span>
+                        <label className="text-sm font-medium text-slate-500">Price</label>
+                        <span className="text-sm text-slate-600 block mt-1">{selectedAttraction.price}</span>
                       </div>
                     )}
 
                     {selectedAttraction.phone && (
                       <div>
-                        <label className="text-sm font-medium text-muted-foreground">Phone</label>
+                        <label className="text-sm font-medium text-slate-500">Phone</label>
                         <div className="flex items-center gap-2 mt-1">
-                          <Phone className="h-3.5 w-3.5 text-muted-foreground" />
-                          <span className="text-sm text-muted-foreground">{selectedAttraction.phone}</span>
+                          <Phone className="h-3.5 w-3.5 text-slate-400" />
+                          <span className="text-sm text-slate-600">{selectedAttraction.phone}</span>
                         </div>
                       </div>
                     )}
 
                     {selectedAttraction.rating && (
                       <div>
-                        <label className="text-sm font-medium text-muted-foreground">Rating</label>
+                        <label className="text-sm font-medium text-slate-500">Rating</label>
                         <div className="flex items-center gap-1 mt-1">
-                          <Star className="h-3.5 w-3.5 text-yellow-500 fill-current" />
-                          <span className="text-sm text-muted-foreground">{selectedAttraction.rating}/5</span>
+                          <Star className="h-3.5 w-3.5 text-amber-500 fill-current" />
+                          <span className="text-sm text-slate-600">{selectedAttraction.rating}/5</span>
                         </div>
                       </div>
                     )}
@@ -381,11 +371,11 @@ export function TourismAttractions() {
                 </div>
               </div>
 
-              <div className="flex gap-3">
+              <div className="flex gap-3 pt-2">
                 {selectedAttraction.website && (
                   <button
                     onClick={() => window.open(selectedAttraction.website, '_blank')}
-                    className="px-4 py-2.5 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors duration-200 flex items-center gap-2"
+                    className="px-4 py-2.5 bg-[#2d4a3e] text-white rounded-lg font-medium hover:bg-[#3d5a4e] transition-colors duration-200 flex items-center gap-2"
                   >
                     <Globe className="h-4 w-4" />
                     Visit Website
@@ -394,7 +384,7 @@ export function TourismAttractions() {
                 {selectedAttraction.instagram && (
                   <button
                     onClick={() => window.open(`https://instagram.com/${selectedAttraction.instagram.replace('@', '')}`, '_blank')}
-                    className="px-4 py-2.5 bg-muted text-foreground rounded-lg font-medium hover:bg-muted/80 transition-colors duration-200 flex items-center gap-2"
+                    className="px-4 py-2.5 bg-slate-100 text-slate-700 rounded-lg font-medium hover:bg-slate-200 transition-colors duration-200 flex items-center gap-2"
                   >
                     <ExternalLink className="h-4 w-4" />
                     Follow on Instagram
@@ -402,7 +392,7 @@ export function TourismAttractions() {
                 )}
                 <button
                   onClick={() => setSelectedAttraction(null)}
-                  className="px-4 py-2.5 bg-muted text-foreground rounded-lg font-medium hover:bg-muted/80 transition-colors duration-200"
+                  className="px-4 py-2.5 bg-slate-100 text-slate-700 rounded-lg font-medium hover:bg-slate-200 transition-colors duration-200"
                 >
                   Close
                 </button>

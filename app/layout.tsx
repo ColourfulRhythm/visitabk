@@ -36,8 +36,8 @@ const instrumentSerif = Instrument_Serif({
 })
 
 export const metadata: Metadata = {
-  title: 'Bali - Ultra-Luxury Real Estate & Exclusive Experiences',
-  description: 'An exclusive sanctuary for the world\'s most discerning travelers. Experience pristine beaches, world-class wellness retreats, Michelin-starred dining, and ultra-luxury real estate investments in one of the world\'s most sought-after destinations.',
+  title: 'VisitABK — Kobape, Abeokuta | Premier Real Estate & Experiences',
+  description: 'Discover Kobape, Abeokuta — Nigeria\'s most promising real estate corridor. Premium developments, rich cultural heritage, and investment opportunities in Ogun State\'s rising destination.',
 }
 
 export default function RootLayout({

@@ -20,51 +20,38 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-white">
-      {/* Ultra-Luxury Hero Section */}
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
       <TourismHero />
 
-      {/* Luxury Search Section */}
-      <div className="relative">
-        <div className="max-w-6xl mx-auto px-6 py-16">
+      {/* Search Section */}
+      <div className="bg-slate-50 py-12">
+        <div className="max-w-6xl mx-auto px-6">
           <TourismSearchBar />
         </div>
       </div>
 
-      {/* Ultra-Luxury Real Estate Developments */}
-      <div className="relative">
-        <div className="max-w-7xl mx-auto">
-          <TourismDevelopmentsList />
-        </div>
+      {/* Real Estate Developments */}
+      <TourismDevelopmentsList />
+
+      {/* Tourist Attractions */}
+      <div id="attractions-section">
+        <TourismAttractions />
       </div>
 
-      {/* Ultra-Luxury Tourist Attractions */}
-      <div id="attractions-section" className="relative">
-        <div className="max-w-7xl mx-auto">
-          <TourismAttractions />
-        </div>
-      </div>
-
-      {/* Luxury Map Section */}
-      <div id="map-section" className="bg-gradient-to-b from-white to-slate-50 py-24">
+      {/* Map Section */}
+      <div id="map-section" className="bg-slate-50 py-20">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16 space-y-4">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/10 border border-amber-500/20 rounded-full text-xs font-semibold text-amber-600 uppercase tracking-[0.2em] mb-4">
-              <span>Interactive Exploration</span>
-            </div>
-            <h2 className="text-5xl md:text-6xl font-headline font-bold text-slate-900 mb-4">
-              <span className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent">
-                Explore
-              </span>
-              <span className="block mt-2 bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 bg-clip-text text-transparent">
-                The Destination
-              </span>
+          <div className="text-center mb-12 space-y-4">
+            <p className="text-sm font-medium text-[#2d4a3e] uppercase tracking-wider">Interactive Map</p>
+            <h2 className="text-4xl md:text-5xl font-serif text-slate-900">
+              Explore the Area
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light">
-              Discover exclusive real estate opportunities and world-class attractions in this extraordinary destination
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              Discover real estate opportunities and attractions across Kobape and greater Abeokuta
             </p>
           </div>
-          <div className="h-[600px] rounded-3xl overflow-hidden shadow-2xl border-2 border-slate-200/60">
+          <div className="h-[500px] rounded-2xl overflow-hidden shadow-lg border border-slate-200">
             <SimpleMapView />
           </div>
         </div>

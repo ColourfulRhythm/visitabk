@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { MapPin, Building2, ExternalLink, Edit, Heart, Share2, ArrowRight, Trees, Home, Users, Save, X } from 'lucide-react'
 
-// Ultra-Luxury Bali Real Estate Developments - Curated for the World's Most Discerning Investors
+// Real Estate Developments in Kobape, Abeokuta
 const realDevelopments = [
   {
     id: '1',
@@ -316,7 +316,7 @@ const realDevelopments = [
     developer: 'Focal Point Property Development & Management Services Ltd.',
     status: 'pre-launch',
     size_acres: 120,
-    description: 'An ultra-luxury hillside retreat offering exclusive private estates with panoramic views. Features infinity pools, private helipads, world-class wellness centers, Michelin-starred private dining, and 24/7 concierge services. The ultimate sanctuary for the world\'s elite, where privacy meets unparalleled luxury in a pristine natural setting.',
+    description: 'Premium hillside development offering exclusive private estates with panoramic views. Features infinity pools, wellness centers, private dining pavilions, and 24/7 concierge services. A sanctuary for discerning investors seeking privacy and natural beauty.',
     website: 'https://focalpointproperties.com',
     email: '2seasonsabk@gmail.com',
     phone: '08156901392, 07071670649',
@@ -324,7 +324,7 @@ const realDevelopments = [
     gps_lat: 7.1764,
     gps_lng: 3.3671,
     image: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=center',
-    features: ['Ultra-Luxury Estates', 'Infinity Pools', 'Private Helipads', 'Wellness Centers', 'Private Dining', '24/7 Concierge', 'Panoramic Views', '120 Acres', 'Elite Sanctuary'],
+    features: ['Premium Estates', 'Infinity Pools', 'Wellness Centers', 'Private Dining', '24/7 Concierge', 'Panoramic Views', '120 Acres'],
     created_at: '2024-01-30'
   }
 ]
@@ -395,15 +395,15 @@ export function TourismDevelopmentsList() {
   const getStatusColor = (status: string) => {
     switch (status.toLowerCase()) {
       case 'pre-launch':
-        return 'bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300'
+        return 'bg-amber-50 text-amber-700 border border-amber-200'
       case 'selling':
-        return 'bg-primary/10 text-primary dark:bg-primary/20 dark:text-primary/90'
+        return 'bg-emerald-50 text-emerald-700 border border-emerald-200'
       case 'under development':
-        return 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300'
+        return 'bg-blue-50 text-blue-700 border border-blue-200'
       case 'completed':
-        return 'bg-muted text-muted-foreground'
+        return 'bg-slate-100 text-slate-600 border border-slate-200'
       default:
-        return 'bg-muted text-muted-foreground'
+        return 'bg-slate-100 text-slate-600 border border-slate-200'
     }
   }
 
@@ -417,129 +417,119 @@ export function TourismDevelopmentsList() {
   }
 
   return (
-    <div className="space-y-16 bg-gradient-to-b from-slate-50 to-white py-20">
-      {/* Ultra-Luxury Section Header */}
-      <div className="text-center space-y-6 max-w-5xl mx-auto px-6">
-        <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/10 border border-amber-500/20 rounded-full text-xs font-semibold text-amber-600 uppercase tracking-[0.2em] mb-4">
-          <span>Exclusive Portfolio</span>
-        </div>
-        <h2 className="text-5xl md:text-6xl lg:text-7xl font-headline font-bold text-slate-900 leading-tight">
-          <span className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent">
-            Ultra-Luxury
-          </span>
-          <span className="block mt-2 bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 bg-clip-text text-transparent">
-            Real Estate Developments
-          </span>
+    <div id="developments-section" className="space-y-12 py-20 bg-slate-50">
+      {/* Section Header */}
+      <div className="text-center space-y-4 max-w-3xl mx-auto px-6">
+        <p className="text-sm font-medium text-[#2d4a3e] uppercase tracking-wider">Investment Opportunities</p>
+        <h2 className="text-4xl md:text-5xl font-serif text-slate-900">
+          Real Estate Developments
         </h2>
-        <p className="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-light">
-          Curated collection of the world's most exclusive properties. Where architectural excellence meets natural beauty, creating sanctuaries for the discerning few.
-        </p>
-        <p className="text-base text-slate-500 max-w-2xl mx-auto font-light italic">
-          Each property represents a masterpiece of design, location, and luxury living
+        <p className="text-lg text-slate-600 leading-relaxed">
+          From eco-friendly communities to regenerative lifestyle cities, explore the developments shaping Kobape's future.
         </p>
       </div>
 
-      {/* Ultra-Luxury Developments Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-6">
+      {/* Developments Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto px-6">
         {filteredDevelopments.map((development, index) => (
           <div
             key={development.id}
-            className="group relative bg-white border border-slate-200/60 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+            className="group bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300"
           >
-            {/* Luxury Image with Overlay */}
-            <div className="relative h-80 overflow-hidden">
+            {/* Image */}
+            <div className="relative h-56 overflow-hidden">
               <img
                 src={development.image}
                 alt={development.name}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
               
-              {/* Luxury Status Badge */}
-              <div className="absolute top-6 left-6">
-                <span className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider backdrop-blur-xl ${getStatusColor(development.status)} shadow-xl`}>
+              {/* Status Badge */}
+              <div className="absolute top-4 left-4">
+                <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(development.status)}`}>
                   {development.status}
                 </span>
               </div>
 
-              {/* Luxury Action Buttons */}
-              <div className="absolute top-6 right-6 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                <button className="w-11 h-11 bg-white/95 backdrop-blur-xl rounded-xl flex items-center justify-center hover:bg-white transition-all duration-300 shadow-xl hover:scale-110">
-                  <Heart className="h-5 w-5 text-slate-700" />
+              {/* Action Buttons */}
+              <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <button className="w-8 h-8 bg-white/90 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-white transition-colors">
+                  <Heart className="h-4 w-4 text-slate-600" />
                 </button>
-                <button className="w-11 h-11 bg-white/95 backdrop-blur-xl rounded-xl flex items-center justify-center hover:bg-white transition-all duration-300 shadow-xl hover:scale-110">
-                  <Share2 className="h-5 w-5 text-slate-700" />
+                <button className="w-8 h-8 bg-white/90 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-white transition-colors">
+                  <Share2 className="h-4 w-4 text-slate-600" />
                 </button>
               </div>
 
-              {/* Luxury Size Badge */}
+              {/* Size Badge */}
               {development.size_acres && (
-                <div className="absolute bottom-6 left-6">
-                  <div className="bg-gradient-to-r from-amber-500/90 to-amber-400/90 backdrop-blur-xl px-4 py-2 rounded-xl text-sm font-bold text-white shadow-2xl">
+                <div className="absolute bottom-4 left-4">
+                  <div className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg text-sm font-medium text-slate-800">
                     {development.size_acres} Acres
                   </div>
                 </div>
               )}
             </div>
 
-            {/* Luxury Content */}
-            <div className="p-8 space-y-6 bg-white">
-              <div className="space-y-3">
-                <h3 className="text-2xl font-bold text-slate-900 group-hover:text-amber-600 transition-colors duration-300 leading-tight">
+            {/* Content */}
+            <div className="p-5 space-y-4">
+              <div className="space-y-2">
+                <h3 className="text-lg font-semibold text-slate-900 group-hover:text-[#2d4a3e] transition-colors line-clamp-1">
                   {development.name}
                 </h3>
                 <div className="flex items-center gap-2 text-slate-500">
-                  <MapPin className="h-4 w-4 text-amber-500" />
-                  <span className="text-sm font-medium">{development.location}</span>
+                  <MapPin className="h-3.5 w-3.5 flex-shrink-0" />
+                  <span className="text-sm line-clamp-1">{development.location}</span>
                 </div>
-                <p className="text-xs text-slate-400 uppercase tracking-wider font-semibold">{development.developer}</p>
+                <p className="text-xs text-slate-400">{development.developer}</p>
               </div>
 
-              <p className="text-sm text-slate-600 leading-relaxed line-clamp-3 font-light">
+              <p className="text-sm text-slate-600 leading-relaxed line-clamp-2">
                 {development.description}
               </p>
 
-              {/* Luxury Features */}
-              <div className="flex flex-wrap gap-2">
-                {development.features.slice(0, 4).map((feature, idx) => (
+              {/* Features */}
+              <div className="flex flex-wrap gap-1.5">
+                {development.features.slice(0, 3).map((feature, idx) => (
                   <span
                     key={idx}
-                    className="px-3 py-1.5 bg-gradient-to-r from-slate-100 to-slate-50 border border-slate-200 text-slate-700 text-xs font-semibold rounded-lg shadow-sm"
+                    className="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded-md"
                   >
                     {feature}
                   </span>
                 ))}
-                {development.features.length > 4 && (
-                  <span className="px-3 py-1.5 bg-gradient-to-r from-amber-500 to-amber-400 text-white text-xs font-bold rounded-lg shadow-lg">
-                    +{development.features.length - 4} More
+                {development.features.length > 3 && (
+                  <span className="px-2 py-1 bg-[#2d4a3e]/10 text-[#2d4a3e] text-xs font-medium rounded-md">
+                    +{development.features.length - 3}
                   </span>
                 )}
               </div>
 
-              {/* Luxury Pricing */}
+              {/* Pricing */}
               {development.price_per_sqm && (
-                <div className="pt-2 border-t border-slate-200">
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-3xl font-bold text-slate-900 font-serif">
+                <div className="pt-2 border-t border-slate-100">
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-xl font-semibold text-slate-900">
                       {formatCurrency(development.price_per_sqm)}
                     </span>
-                    <span className="text-sm text-slate-500 font-medium">/sqm</span>
+                    <span className="text-sm text-slate-500">/sqm</span>
                   </div>
                 </div>
               )}
 
-              {/* Luxury Action Buttons */}
-              <div className="flex gap-3 pt-4">
+              {/* Action Buttons */}
+              <div className="flex gap-2 pt-2">
                 <button
                   onClick={() => setSelectedDevelopment(development)}
-                  className="flex-1 bg-gradient-to-r from-amber-500 to-amber-400 text-white py-3.5 px-6 rounded-xl font-bold text-sm hover:from-amber-600 hover:to-amber-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center gap-2"
+                  className="flex-1 bg-[#2d4a3e] text-white py-2.5 px-4 rounded-lg font-medium text-sm hover:bg-[#3d5a4e] transition-colors duration-200 flex items-center justify-center gap-2"
                 >
                   View Details
                   <ArrowRight className="h-4 w-4" />
                 </button>
                 <button
                   onClick={() => startEditing(development)}
-                  className="px-4 py-3.5 bg-slate-100 text-slate-700 rounded-xl font-semibold hover:bg-slate-200 transition-all duration-300 shadow-sm hover:shadow-md"
+                  className="px-3 py-2.5 bg-slate-100 text-slate-600 rounded-lg hover:bg-slate-200 transition-colors duration-200"
                   title="Edit this listing"
                 >
                   <Edit className="h-4 w-4" />
@@ -552,22 +542,22 @@ export function TourismDevelopmentsList() {
 
       {/* Edit Form Modal */}
       {editingId && editForm && (
-        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-background-tertiary border border-border rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-lg">
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
             <div className="p-6 space-y-5">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <Edit className="h-5 w-5 text-primary" />
+                  <div className="w-10 h-10 bg-[#2d4a3e]/10 rounded-lg flex items-center justify-center">
+                    <Edit className="h-5 w-5 text-[#2d4a3e]" />
                   </div>
                   <div>
-                    <h2 className="text-xl font-semibold text-foreground">Edit Listing</h2>
-                    <p className="text-sm text-muted-foreground">Update development information</p>
+                    <h2 className="text-xl font-semibold text-slate-900">Edit Listing</h2>
+                    <p className="text-sm text-slate-500">Update development information</p>
                   </div>
                 </div>
                 <button
                   onClick={cancelEdit}
-                  className="w-9 h-9 bg-muted rounded-lg flex items-center justify-center hover:bg-muted/80 transition-colors"
+                  className="w-9 h-9 bg-slate-100 rounded-lg flex items-center justify-center hover:bg-slate-200 transition-colors"
                 >
                   <X className="h-4 w-4" />
                 </button>
@@ -576,52 +566,52 @@ export function TourismDevelopmentsList() {
               <div className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">Name</label>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">Name</label>
                     <input
                       type="text"
                       value={editForm.name}
                       onChange={(e) => setEditForm({...editForm, name: e.target.value})}
-                      className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-ring focus:border-transparent"
+                      className="w-full px-3 py-2 border border-slate-200 rounded-lg bg-white text-slate-900 focus:ring-2 focus:ring-[#2d4a3e]/20 focus:border-[#2d4a3e]"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">Developer</label>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">Developer</label>
                     <input
                       type="text"
                       value={editForm.developer}
                       onChange={(e) => setEditForm({...editForm, developer: e.target.value})}
-                      className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-ring focus:border-transparent"
+                      className="w-full px-3 py-2 border border-slate-200 rounded-lg bg-white text-slate-900 focus:ring-2 focus:ring-[#2d4a3e]/20 focus:border-[#2d4a3e]"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">Location</label>
+                  <label className="block text-sm font-medium text-slate-700 mb-2">Location</label>
                   <input
                     type="text"
                     value={editForm.location}
                     onChange={(e) => setEditForm({...editForm, location: e.target.value})}
-                    className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-ring focus:border-transparent"
+                    className="w-full px-3 py-2 border border-slate-200 rounded-lg bg-white text-slate-900 focus:ring-2 focus:ring-[#2d4a3e]/20 focus:border-[#2d4a3e]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">Description</label>
+                  <label className="block text-sm font-medium text-slate-700 mb-2">Description</label>
                   <textarea
                     rows={4}
                     value={editForm.description}
                     onChange={(e) => setEditForm({...editForm, description: e.target.value})}
-                    className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-ring focus:border-transparent"
+                    className="w-full px-3 py-2 border border-slate-200 rounded-lg bg-white text-slate-900 focus:ring-2 focus:ring-[#2d4a3e]/20 focus:border-[#2d4a3e]"
                   />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">Status</label>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">Status</label>
                     <select
                       value={editForm.status}
                       onChange={(e) => setEditForm({...editForm, status: e.target.value})}
-                      className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-ring focus:border-transparent"
+                      className="w-full px-3 py-2 border border-slate-200 rounded-lg bg-white text-slate-900 focus:ring-2 focus:ring-[#2d4a3e]/20 focus:border-[#2d4a3e]"
                     >
                       <option value="pre-launch">Pre-launch</option>
                       <option value="selling">Selling</option>
@@ -630,78 +620,78 @@ export function TourismDevelopmentsList() {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">Price per sqm</label>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">Price per sqm</label>
                     <input
                       type="number"
                       value={editForm.price_per_sqm || ''}
                       onChange={(e) => setEditForm({...editForm, price_per_sqm: e.target.value ? parseInt(e.target.value) : undefined})}
-                      className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-ring focus:border-transparent"
+                      className="w-full px-3 py-2 border border-slate-200 rounded-lg bg-white text-slate-900 focus:ring-2 focus:ring-[#2d4a3e]/20 focus:border-[#2d4a3e]"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">Size (Acres)</label>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">Size (Acres)</label>
                     <input
                       type="number"
                       value={editForm.size_acres || ''}
                       onChange={(e) => setEditForm({...editForm, size_acres: e.target.value ? parseInt(e.target.value) : undefined})}
-                      className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-ring focus:border-transparent"
+                      className="w-full px-3 py-2 border border-slate-200 rounded-lg bg-white text-slate-900 focus:ring-2 focus:ring-[#2d4a3e]/20 focus:border-[#2d4a3e]"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">Website</label>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">Website</label>
                     <input
                       type="url"
                       value={editForm.website}
                       onChange={(e) => setEditForm({...editForm, website: e.target.value})}
-                      className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-ring focus:border-transparent"
+                      className="w-full px-3 py-2 border border-slate-200 rounded-lg bg-white text-slate-900 focus:ring-2 focus:ring-[#2d4a3e]/20 focus:border-[#2d4a3e]"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">Email</label>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">Email</label>
                     <input
                       type="email"
                       value={editForm.email}
                       onChange={(e) => setEditForm({...editForm, email: e.target.value})}
-                      className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-ring focus:border-transparent"
+                      className="w-full px-3 py-2 border border-slate-200 rounded-lg bg-white text-slate-900 focus:ring-2 focus:ring-[#2d4a3e]/20 focus:border-[#2d4a3e]"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">Phone</label>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">Phone</label>
                     <input
                       type="tel"
                       value={editForm.phone}
                       onChange={(e) => setEditForm({...editForm, phone: e.target.value})}
-                      className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-ring focus:border-transparent"
+                      className="w-full px-3 py-2 border border-slate-200 rounded-lg bg-white text-slate-900 focus:ring-2 focus:ring-[#2d4a3e]/20 focus:border-[#2d4a3e]"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">Features (comma-separated)</label>
+                  <label className="block text-sm font-medium text-slate-700 mb-2">Features (comma-separated)</label>
                   <input
                     type="text"
                     value={editForm.features ? editForm.features.join(', ') : ''}
                     onChange={(e) => setEditForm({...editForm, features: e.target.value.split(',').map(f => f.trim()).filter(f => f)})}
-                    className="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-ring focus:border-transparent"
+                    className="w-full px-3 py-2 border border-slate-200 rounded-lg bg-white text-slate-900 focus:ring-2 focus:ring-[#2d4a3e]/20 focus:border-[#2d4a3e]"
                     placeholder="Eco-friendly, Luxury, Waterfront"
                   />
                 </div>
               </div>
 
-              <div className="flex gap-3">
+              <div className="flex gap-3 pt-2">
                 <button
                   onClick={saveEdit}
-                  className="flex-1 px-4 py-2.5 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors duration-200 flex items-center justify-center gap-2"
+                  className="flex-1 px-4 py-2.5 bg-[#2d4a3e] text-white rounded-lg font-medium hover:bg-[#3d5a4e] transition-colors duration-200 flex items-center justify-center gap-2"
                 >
                   <Save className="h-4 w-4" />
                   Save Changes
                 </button>
                 <button
                   onClick={cancelEdit}
-                  className="px-4 py-2.5 bg-muted text-foreground rounded-lg font-medium hover:bg-muted/80 transition-colors duration-200"
+                  className="px-4 py-2.5 bg-slate-100 text-slate-700 rounded-lg font-medium hover:bg-slate-200 transition-colors duration-200"
                 >
                   Cancel
                 </button>
@@ -713,17 +703,17 @@ export function TourismDevelopmentsList() {
 
       {/* Development Details Modal */}
       {selectedDevelopment && (
-        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-background-tertiary border border-border rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-lg">
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
             <div className="p-6 space-y-5">
               <div className="flex items-start justify-between">
                 <div>
-                  <h3 className="text-2xl font-semibold text-foreground">{selectedDevelopment.name}</h3>
-                  <p className="text-base text-muted-foreground mt-1">{selectedDevelopment.developer}</p>
+                  <h3 className="text-2xl font-semibold text-slate-900">{selectedDevelopment.name}</h3>
+                  <p className="text-base text-slate-500 mt-1">{selectedDevelopment.developer}</p>
                 </div>
                 <button
                   onClick={() => setSelectedDevelopment(null)}
-                  className="w-9 h-9 bg-muted rounded-lg flex items-center justify-center hover:bg-muted/80 transition-colors"
+                  className="w-9 h-9 bg-slate-100 rounded-lg flex items-center justify-center hover:bg-slate-200 transition-colors"
                 >
                   ×
                 </button>
@@ -732,25 +722,25 @@ export function TourismDevelopmentsList() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div className="space-y-4">
                   <div>
-                    <label className="text-sm font-medium text-muted-foreground">Location</label>
+                    <label className="text-sm font-medium text-slate-500">Location</label>
                     <p className="text-base mt-1">{selectedDevelopment.location}</p>
                   </div>
                   {selectedDevelopment.price_per_sqm && (
                     <div>
-                      <label className="text-sm font-medium text-muted-foreground">Price per Square Meter</label>
-                      <p className="text-xl font-semibold text-foreground mt-1">
+                      <label className="text-sm font-medium text-slate-500">Price per Square Meter</label>
+                      <p className="text-xl font-semibold text-slate-900 mt-1">
                         {formatCurrency(selectedDevelopment.price_per_sqm)}
                       </p>
                     </div>
                   )}
                   {selectedDevelopment.size_acres && (
                     <div>
-                      <label className="text-sm font-medium text-muted-foreground">Size</label>
+                      <label className="text-sm font-medium text-slate-500">Size</label>
                       <p className="text-base font-medium mt-1">{selectedDevelopment.size_acres} Acres</p>
                     </div>
                   )}
                   <div>
-                    <label className="text-sm font-medium text-muted-foreground">Contact</label>
+                    <label className="text-sm font-medium text-slate-500">Contact</label>
                     <p className="text-sm mt-1">{selectedDevelopment.email}</p>
                     <p className="text-sm">{selectedDevelopment.phone}</p>
                   </div>
@@ -758,16 +748,16 @@ export function TourismDevelopmentsList() {
                 
                 <div className="space-y-4">
                   <div>
-                    <label className="text-sm font-medium text-muted-foreground">Description</label>
-                    <p className="text-sm text-muted-foreground mt-1">{selectedDevelopment.description}</p>
+                    <label className="text-sm font-medium text-slate-500">Description</label>
+                    <p className="text-sm text-slate-600 mt-1">{selectedDevelopment.description}</p>
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-muted-foreground">Features</label>
+                    <label className="text-sm font-medium text-slate-500">Features</label>
                     <div className="flex flex-wrap gap-2 mt-1">
                       {selectedDevelopment.features.map((feature: string, idx: number) => (
                         <span
                           key={idx}
-                          className="px-2.5 py-1 bg-muted text-foreground text-xs font-medium rounded-md"
+                          className="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-md"
                         >
                           {feature}
                         </span>
@@ -777,11 +767,11 @@ export function TourismDevelopmentsList() {
                 </div>
               </div>
 
-              <div className="flex gap-3">
+              <div className="flex gap-3 pt-2">
                 {selectedDevelopment.website && (
                   <button
                     onClick={() => window.open(selectedDevelopment.website, '_blank')}
-                    className="px-4 py-2.5 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors duration-200 flex items-center gap-2"
+                    className="px-4 py-2.5 bg-[#2d4a3e] text-white rounded-lg font-medium hover:bg-[#3d5a4e] transition-colors duration-200 flex items-center gap-2"
                   >
                     <ExternalLink className="h-4 w-4" />
                     Visit Website
@@ -789,7 +779,7 @@ export function TourismDevelopmentsList() {
                 )}
                 <button
                   onClick={() => setSelectedDevelopment(null)}
-                  className="px-4 py-2.5 bg-muted text-foreground rounded-lg font-medium hover:bg-muted/80 transition-colors duration-200"
+                  className="px-4 py-2.5 bg-slate-100 text-slate-700 rounded-lg font-medium hover:bg-slate-200 transition-colors duration-200"
                 >
                   Close
                 </button>
