@@ -5,157 +5,26 @@ import { MapPin, Building2, Landmark, TrendingUp, Trees, Users } from 'lucide-re
 export function TourismHero() {
   return (
     <div className="relative overflow-hidden bg-[#0a0f0d] min-h-screen flex items-center">
-      {/* CSS Animations */}
-      <style jsx>{`
-        @keyframes fogDrift1 {
-          0% { transform: translateX(-100%); }
-          100% { transform: translateX(100%); }
-        }
-        @keyframes fogDrift2 {
-          0% { transform: translateX(100%); }
-          100% { transform: translateX(-100%); }
-        }
-        @keyframes fogDrift3 {
-          0% { transform: translateX(-50%) translateY(0); }
-          50% { transform: translateX(0%) translateY(-10px); }
-          100% { transform: translateX(50%) translateY(0); }
-        }
-        @keyframes fogPulse {
-          0%, 100% { opacity: 0.3; }
-          50% { opacity: 0.5; }
-        }
-        @keyframes mistRise {
-          0% { transform: translateY(20px); opacity: 0.2; }
-          50% { transform: translateY(-10px); opacity: 0.4; }
-          100% { transform: translateY(20px); opacity: 0.2; }
-        }
-        .fog-layer-1 {
-          animation: fogDrift1 25s linear infinite, fogPulse 8s ease-in-out infinite;
-        }
-        .fog-layer-2 {
-          animation: fogDrift2 35s linear infinite, fogPulse 12s ease-in-out infinite;
-        }
-        .fog-layer-3 {
-          animation: fogDrift3 20s ease-in-out infinite;
-        }
-        .mist-rise {
-          animation: mistRise 15s ease-in-out infinite;
-        }
-      `}</style>
-
-      {/* Sophisticated Background */}
+      {/* Background with Video/Image of Hills */}
       <div className="absolute inset-0">
-        {/* Subtle gradient mesh */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0a0f0d] via-[#0f1512] to-[#0a0f0d]"></div>
+        {/* Video background of misty hills */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-50"
+          poster="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=2070&auto=format&fit=crop"
+        >
+          <source 
+            src="https://videos.pexels.com/video-files/2330708/2330708-hd_1920_1080_30fps.mp4" 
+            type="video/mp4" 
+          />
+        </video>
         
-        {/* Hill Silhouette Background */}
-        <div className="absolute inset-0 opacity-[0.15]">
-          <svg 
-            viewBox="0 0 1440 900" 
-            className="absolute bottom-0 w-full h-full" 
-            preserveAspectRatio="xMidYMax slice"
-          >
-            <defs>
-              <linearGradient id="hillGradient1" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="#2d4a3e" stopOpacity="0.8" />
-                <stop offset="100%" stopColor="#1a2e26" stopOpacity="1" />
-              </linearGradient>
-              <linearGradient id="hillGradient2" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="#3d5a4e" stopOpacity="0.6" />
-                <stop offset="100%" stopColor="#2d4a3e" stopOpacity="0.9" />
-              </linearGradient>
-              <linearGradient id="hillGradient3" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="#4d6a5e" stopOpacity="0.4" />
-                <stop offset="100%" stopColor="#3d5a4e" stopOpacity="0.7" />
-              </linearGradient>
-            </defs>
-            
-            {/* Distant mountains - most faded */}
-            <path
-              d="M0 600 Q200 400 400 500 T800 420 T1200 480 T1440 400 L1440 900 L0 900 Z"
-              fill="url(#hillGradient3)"
-            />
-            
-            {/* Mid-range hills */}
-            <path
-              d="M0 650 Q150 520 350 580 T700 500 T1000 560 T1300 520 T1440 580 L1440 900 L0 900 Z"
-              fill="url(#hillGradient2)"
-            />
-            
-            {/* Foreground hills - most prominent */}
-            <path
-              d="M0 720 Q100 620 250 680 T550 600 T850 660 T1150 620 T1440 700 L1440 900 L0 900 Z"
-              fill="url(#hillGradient1)"
-            />
-          </svg>
-        </div>
-        
-        {/* Animated Fog Layers */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {/* Fog Layer 1 - Slow moving, bottom */}
-          <div className="fog-layer-1 absolute bottom-0 left-0 w-[200%] h-[40%] opacity-30">
-            <svg viewBox="0 0 1440 400" className="w-full h-full" preserveAspectRatio="none">
-              <defs>
-                <linearGradient id="fogGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="#ffffff" stopOpacity="0" />
-                  <stop offset="50%" stopColor="#a8c4b8" stopOpacity="0.3" />
-                  <stop offset="100%" stopColor="#7ab89a" stopOpacity="0.1" />
-                </linearGradient>
-              </defs>
-              <ellipse cx="400" cy="350" rx="500" ry="150" fill="url(#fogGrad1)" />
-              <ellipse cx="900" cy="320" rx="400" ry="120" fill="url(#fogGrad1)" />
-              <ellipse cx="1300" cy="360" rx="350" ry="100" fill="url(#fogGrad1)" />
-            </svg>
-          </div>
-          
-          {/* Fog Layer 2 - Medium speed, mid height */}
-          <div className="fog-layer-2 absolute bottom-[15%] left-0 w-[200%] h-[35%] opacity-25">
-            <svg viewBox="0 0 1440 350" className="w-full h-full" preserveAspectRatio="none">
-              <defs>
-                <linearGradient id="fogGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="#ffffff" stopOpacity="0" />
-                  <stop offset="60%" stopColor="#c4d4cc" stopOpacity="0.25" />
-                  <stop offset="100%" stopColor="#8ba89a" stopOpacity="0.05" />
-                </linearGradient>
-              </defs>
-              <ellipse cx="300" cy="280" rx="450" ry="130" fill="url(#fogGrad2)" />
-              <ellipse cx="800" cy="250" rx="380" ry="110" fill="url(#fogGrad2)" />
-              <ellipse cx="1200" cy="290" rx="420" ry="100" fill="url(#fogGrad2)" />
-            </svg>
-          </div>
-          
-          {/* Fog Layer 3 - Wispy, higher */}
-          <div className="fog-layer-3 absolute bottom-[30%] left-0 w-full h-[25%] opacity-20">
-            <svg viewBox="0 0 1440 250" className="w-full h-full" preserveAspectRatio="none">
-              <defs>
-                <linearGradient id="fogGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#ffffff" stopOpacity="0" />
-                  <stop offset="50%" stopColor="#d4e4dc" stopOpacity="0.2" />
-                  <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
-                </linearGradient>
-              </defs>
-              <ellipse cx="500" cy="180" rx="600" ry="80" fill="url(#fogGrad3)" />
-              <ellipse cx="1000" cy="150" rx="500" ry="70" fill="url(#fogGrad3)" />
-            </svg>
-          </div>
-          
-          {/* Rising Mist */}
-          <div className="mist-rise absolute bottom-[10%] left-[10%] w-[30%] h-[30%] opacity-15">
-            <div className="w-full h-full bg-gradient-to-t from-[#7ab89a]/30 via-[#a8c4b8]/20 to-transparent rounded-full blur-3xl"></div>
-          </div>
-          <div className="mist-rise absolute bottom-[15%] right-[15%] w-[25%] h-[25%] opacity-10" style={{ animationDelay: '-5s' }}>
-            <div className="w-full h-full bg-gradient-to-t from-[#8bc4a8]/25 via-[#b8d4c8]/15 to-transparent rounded-full blur-3xl"></div>
-          </div>
-        </div>
-        
-        {/* Organic shape accents */}
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-[#2d4a3e]/20 to-transparent rounded-full blur-3xl translate-x-1/3 -translate-y-1/3"></div>
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-[#8b5a2b]/10 to-transparent rounded-full blur-3xl -translate-x-1/3 translate-y-1/3"></div>
-        
-        {/* Subtle texture */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-        }}></div>
+        {/* Dark overlay gradient for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0f0d] via-[#0a0f0d]/80 to-[#0a0f0d]/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f0d] via-transparent to-[#0a0f0d]/60"></div>
       </div>
       
       <div className="relative max-w-7xl mx-auto px-6 py-28 md:py-36 w-full">
