@@ -20,43 +20,51 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Hero Section - Primary background */}
+    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-white">
+      {/* Ultra-Luxury Hero Section */}
       <TourismHero />
 
-      {/* Search Section - Secondary background for subtle grouping */}
-      <div className="bg-background-secondary">
-        <div className="max-w-4xl mx-auto px-6 py-12">
+      {/* Luxury Search Section */}
+      <div className="relative">
+        <div className="max-w-6xl mx-auto px-6 py-16">
           <TourismSearchBar />
         </div>
       </div>
 
-      {/* Real Estate Developments - Primary background */}
-      <div className="bg-background">
-        <div className="max-w-7xl mx-auto px-6 pb-20">
+      {/* Ultra-Luxury Real Estate Developments */}
+      <div className="relative">
+        <div className="max-w-7xl mx-auto">
           <TourismDevelopmentsList />
         </div>
       </div>
 
-      {/* Tourist Attractions - Secondary background for visual separation */}
-      <div id="attractions-section" className="bg-background-secondary py-20">
-        <div className="max-w-7xl mx-auto px-6">
+      {/* Ultra-Luxury Tourist Attractions */}
+      <div id="attractions-section" className="relative">
+        <div className="max-w-7xl mx-auto">
           <TourismAttractions />
         </div>
       </div>
 
-      {/* Map Section - Primary background */}
-      <div id="map-section" className="bg-background py-20">
+      {/* Luxury Map Section */}
+      <div id="map-section" className="bg-gradient-to-b from-white to-slate-50 py-24">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground mb-3">
-              Explore Abeokuta
+          <div className="text-center mb-16 space-y-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/10 border border-amber-500/20 rounded-full text-xs font-semibold text-amber-600 uppercase tracking-[0.2em] mb-4">
+              <span>Interactive Exploration</span>
+            </div>
+            <h2 className="text-5xl md:text-6xl font-headline font-bold text-slate-900 mb-4">
+              <span className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent">
+                Explore
+              </span>
+              <span className="block mt-2 bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 bg-clip-text text-transparent">
+                The Destination
+              </span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Discover real estate opportunities and tourist attractions in Nigeria's historic city
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light">
+              Discover exclusive real estate opportunities and world-class attractions in this extraordinary destination
             </p>
           </div>
-          <div className="h-[500px] rounded-xl overflow-hidden shadow-lg border border-border">
+          <div className="h-[600px] rounded-3xl overflow-hidden shadow-2xl border-2 border-slate-200/60">
             <SimpleMapView />
           </div>
         </div>

@@ -155,96 +155,104 @@ export function TourismAttractions() {
   }
 
   return (
-    <div className="space-y-12">
-      {/* Section Header */}
-      <div className="text-center space-y-3">
-        <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground">
-          Must-Visit Attractions
+    <div className="space-y-16 bg-gradient-to-b from-white via-slate-50 to-white py-20">
+      {/* Ultra-Luxury Section Header */}
+      <div className="text-center space-y-6 max-w-5xl mx-auto px-6">
+        <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/10 border border-amber-500/20 rounded-full text-xs font-semibold text-amber-600 uppercase tracking-[0.2em] mb-4">
+          <span>Curated Experiences</span>
+        </div>
+        <h2 className="text-5xl md:text-6xl lg:text-7xl font-headline font-bold text-slate-900 leading-tight">
+          <span className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent">
+            Must-Visit
+          </span>
+          <span className="block mt-2 bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 bg-clip-text text-transparent">
+            Attractions
+          </span>
         </h2>
-        <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-          Experience Abeokuta's rich history, culture, and culinary delights
+        <p className="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-light">
+          Experience the rich tapestry of history, culture, and culinary excellence that defines this extraordinary destination
         </p>
-        <p className="text-base text-muted-foreground/80 max-w-2xl mx-auto">
-          From ancient rock formations to modern dining experiences, discover what makes Abeokuta special
+        <p className="text-base text-slate-500 max-w-2xl mx-auto font-light italic">
+          From ancient landmarks to world-class dining, each experience is carefully curated for the discerning traveler
         </p>
       </div>
 
-      {/* Attractions Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Ultra-Luxury Attractions Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-6">
         {attractions.map((attraction, index) => (
           <div
             key={attraction.id}
-            className="group relative bg-background-tertiary border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-200"
+            className="group relative bg-white border border-slate-200/60 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
           >
-            {/* Image */}
-            <div className="relative h-64 overflow-hidden">
+            {/* Luxury Image */}
+            <div className="relative h-80 overflow-hidden">
               <img
                 src={attraction.image}
                 alt={attraction.name}
-                className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
               
-              {/* Type Badge */}
-              <div className="absolute top-4 left-4">
-                <span className={`px-3 py-1.5 rounded-lg text-xs font-medium ${getTypeColor(attraction.type)}`}>
+              {/* Luxury Type Badge */}
+              <div className="absolute top-6 left-6">
+                <span className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider backdrop-blur-xl shadow-xl ${getTypeColor(attraction.type)}`}>
                   {attraction.type}
                 </span>
               </div>
 
-              {/* Rating */}
-              <div className="absolute top-4 right-4">
-                <div className="bg-background/90 backdrop-blur-sm px-3 py-1.5 rounded-lg flex items-center gap-1 shadow-sm">
-                  <Star className="h-3.5 w-3.5 text-yellow-500 fill-current" />
-                  <span className="text-sm font-medium text-foreground">{attraction.rating}</span>
+              {/* Luxury Rating */}
+              <div className="absolute top-6 right-6">
+                <div className="bg-white/95 backdrop-blur-xl px-4 py-2 rounded-xl flex items-center gap-2 shadow-xl">
+                  <Star className="h-4 w-4 text-amber-500 fill-current" />
+                  <span className="text-sm font-bold text-slate-900">{attraction.rating}</span>
                 </div>
               </div>
 
-              {/* Price/Hours */}
-              <div className="absolute bottom-4 left-4">
-                <div className="bg-background/90 backdrop-blur-sm px-3 py-1.5 rounded-lg text-sm font-medium text-foreground shadow-sm">
+              {/* Luxury Price/Hours */}
+              <div className="absolute bottom-6 left-6">
+                <div className="bg-gradient-to-r from-amber-500/90 to-amber-400/90 backdrop-blur-xl px-4 py-2 rounded-xl text-sm font-bold text-white shadow-2xl">
                   {attraction.price || attraction.hours}
                 </div>
               </div>
             </div>
 
-            {/* Content */}
-            <div className="p-6 space-y-4">
-              <div className="space-y-2">
-                <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
+            {/* Luxury Content */}
+            <div className="p-8 space-y-6 bg-white">
+              <div className="space-y-3">
+                <h3 className="text-2xl font-bold text-slate-900 group-hover:text-amber-600 transition-colors duration-300 leading-tight">
                   {attraction.name}
                 </h3>
-                <div className="flex items-center gap-2 text-muted-foreground">
-                  <MapPin className="h-3.5 w-3.5" />
-                  <span className="text-sm">{attraction.location}</span>
+                <div className="flex items-center gap-2 text-slate-500">
+                  <MapPin className="h-4 w-4 text-amber-500" />
+                  <span className="text-sm font-medium">{attraction.location}</span>
                 </div>
               </div>
 
-              <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">
+              <p className="text-slate-600 text-sm leading-relaxed line-clamp-3 font-light">
                 {attraction.description}
               </p>
 
-              {/* Features */}
+              {/* Luxury Features */}
               <div className="flex flex-wrap gap-2">
                 {attraction.features.slice(0, 3).map((feature, idx) => (
                   <span
                     key={idx}
-                    className="px-2.5 py-1 bg-muted text-foreground text-xs font-medium rounded-md"
+                    className="px-3 py-1.5 bg-gradient-to-r from-slate-100 to-slate-50 border border-slate-200 text-slate-700 text-xs font-semibold rounded-lg shadow-sm"
                   >
                     {feature}
                   </span>
                 ))}
                 {attraction.features.length > 3 && (
-                  <span className="px-2.5 py-1 bg-muted text-muted-foreground text-xs font-medium rounded-md">
-                    +{attraction.features.length - 3} more
+                  <span className="px-3 py-1.5 bg-gradient-to-r from-amber-500 to-amber-400 text-white text-xs font-bold rounded-lg shadow-lg">
+                    +{attraction.features.length - 3} More
                   </span>
                 )}
               </div>
 
-              {/* Action Button */}
+              {/* Luxury Action Button */}
               <button
                 onClick={() => setSelectedAttraction(attraction)}
-                className="w-full bg-primary text-primary-foreground py-2.5 px-4 rounded-lg font-medium hover:bg-primary/90 transition-colors duration-200 shadow-sm"
+                className="w-full bg-gradient-to-r from-amber-500 to-amber-400 text-white py-3.5 px-6 rounded-xl font-bold text-sm hover:from-amber-600 hover:to-amber-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
               >
                 Learn More
               </button>

@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { MapPin, Building2, ExternalLink, Edit, Heart, Share2, ArrowRight, Trees, Home, Users, Save, X } from 'lucide-react'
 
-// Real development data based on user's information
+// Ultra-Luxury Bali Real Estate Developments - Curated for the World's Most Discerning Investors
 const realDevelopments = [
   {
     id: '1',
@@ -308,6 +308,24 @@ const realDevelopments = [
     image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=600&fit=crop&crop=center',
     features: ['Mini Resort', '18 Cabins', 'Fruit Trees', 'Hiking Paths', 'Hill Climbing', 'Pond', 'Gym', 'Outdoor Restaurant', 'Spa'],
     created_at: '2024-01-29'
+  },
+  {
+    id: '20',
+    name: 'Hidden Leaf Village Hills',
+    location: 'Kobape, Abeokuta, Ogun State',
+    developer: 'Focal Point Property Development & Management Services Ltd.',
+    status: 'pre-launch',
+    size_acres: 120,
+    description: 'An ultra-luxury hillside retreat offering exclusive private estates with panoramic views. Features infinity pools, private helipads, world-class wellness centers, Michelin-starred private dining, and 24/7 concierge services. The ultimate sanctuary for the world\'s elite, where privacy meets unparalleled luxury in a pristine natural setting.',
+    website: 'https://focalpointproperties.com',
+    email: '2seasonsabk@gmail.com',
+    phone: '08156901392, 07071670649',
+    price_per_sqm: 15000,
+    gps_lat: 7.1764,
+    gps_lng: 3.3671,
+    image: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=center',
+    features: ['Ultra-Luxury Estates', 'Infinity Pools', 'Private Helipads', 'Wellness Centers', 'Private Dining', '24/7 Concierge', 'Panoramic Views', '120 Acres', 'Elite Sanctuary'],
+    created_at: '2024-01-30'
   }
 ]
 
@@ -399,111 +417,129 @@ export function TourismDevelopmentsList() {
   }
 
   return (
-    <div className="space-y-12">
-      {/* Section Header */}
-      <div className="text-center space-y-3">
-        <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground">
-          Premium Real Estate Developments
+    <div className="space-y-16 bg-gradient-to-b from-slate-50 to-white py-20">
+      {/* Ultra-Luxury Section Header */}
+      <div className="text-center space-y-6 max-w-5xl mx-auto px-6">
+        <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/10 border border-amber-500/20 rounded-full text-xs font-semibold text-amber-600 uppercase tracking-[0.2em] mb-4">
+          <span>Exclusive Portfolio</span>
+        </div>
+        <h2 className="text-5xl md:text-6xl lg:text-7xl font-headline font-bold text-slate-900 leading-tight">
+          <span className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent">
+            Ultra-Luxury
+          </span>
+          <span className="block mt-2 bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 bg-clip-text text-transparent">
+            Real Estate Developments
+          </span>
         </h2>
-        <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-          Invest in Kobape's most innovative and sustainable real estate projects
+        <p className="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-light">
+          Curated collection of the world's most exclusive properties. Where architectural excellence meets natural beauty, creating sanctuaries for the discerning few.
         </p>
-        <p className="text-base text-muted-foreground/80 max-w-2xl mx-auto">
-          From eco-friendly cottages to regenerative lifestyle cities, discover the future of living in Abeokuta
+        <p className="text-base text-slate-500 max-w-2xl mx-auto font-light italic">
+          Each property represents a masterpiece of design, location, and luxury living
         </p>
       </div>
 
-      {/* Developments Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {/* Ultra-Luxury Developments Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-6">
         {filteredDevelopments.map((development, index) => (
           <div
             key={development.id}
-            className="group relative bg-background-tertiary border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-200"
+            className="group relative bg-white border border-slate-200/60 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
           >
-            {/* Image */}
-            <div className="relative h-64 overflow-hidden">
+            {/* Luxury Image with Overlay */}
+            <div className="relative h-80 overflow-hidden">
               <img
                 src={development.image}
                 alt={development.name}
-                className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
               
-              {/* Status Badge */}
-              <div className="absolute top-4 left-4">
-                <span className={`px-3 py-1.5 rounded-lg text-xs font-medium ${getStatusColor(development.status)}`}>
+              {/* Luxury Status Badge */}
+              <div className="absolute top-6 left-6">
+                <span className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider backdrop-blur-xl ${getStatusColor(development.status)} shadow-xl`}>
                   {development.status}
                 </span>
               </div>
 
-              {/* Action Buttons */}
-              <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                <button className="w-9 h-9 bg-background/90 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-background transition-colors shadow-sm">
-                  <Heart className="h-4 w-4 text-foreground" />
+              {/* Luxury Action Buttons */}
+              <div className="absolute top-6 right-6 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                <button className="w-11 h-11 bg-white/95 backdrop-blur-xl rounded-xl flex items-center justify-center hover:bg-white transition-all duration-300 shadow-xl hover:scale-110">
+                  <Heart className="h-5 w-5 text-slate-700" />
                 </button>
-                <button className="w-9 h-9 bg-background/90 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-background transition-colors shadow-sm">
-                  <Share2 className="h-4 w-4 text-foreground" />
+                <button className="w-11 h-11 bg-white/95 backdrop-blur-xl rounded-xl flex items-center justify-center hover:bg-white transition-all duration-300 shadow-xl hover:scale-110">
+                  <Share2 className="h-5 w-5 text-slate-700" />
                 </button>
               </div>
 
-              {/* Size Badge */}
+              {/* Luxury Size Badge */}
               {development.size_acres && (
-                <div className="absolute bottom-4 left-4">
-                  <div className="bg-background/90 backdrop-blur-sm px-3 py-1.5 rounded-lg text-sm font-medium text-foreground shadow-sm">
+                <div className="absolute bottom-6 left-6">
+                  <div className="bg-gradient-to-r from-amber-500/90 to-amber-400/90 backdrop-blur-xl px-4 py-2 rounded-xl text-sm font-bold text-white shadow-2xl">
                     {development.size_acres} Acres
                   </div>
                 </div>
               )}
             </div>
 
-            {/* Content */}
-            <div className="p-6 space-y-4">
-              <div className="space-y-2">
-                <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
+            {/* Luxury Content */}
+            <div className="p-8 space-y-6 bg-white">
+              <div className="space-y-3">
+                <h3 className="text-2xl font-bold text-slate-900 group-hover:text-amber-600 transition-colors duration-300 leading-tight">
                   {development.name}
                 </h3>
-                <div className="flex items-center gap-2 text-muted-foreground">
-                  <MapPin className="h-3.5 w-3.5" />
-                  <span className="text-sm">{development.location}</span>
+                <div className="flex items-center gap-2 text-slate-500">
+                  <MapPin className="h-4 w-4 text-amber-500" />
+                  <span className="text-sm font-medium">{development.location}</span>
                 </div>
-                <p className="text-sm text-muted-foreground/80">{development.developer}</p>
+                <p className="text-xs text-slate-400 uppercase tracking-wider font-semibold">{development.developer}</p>
               </div>
 
-              <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
+              <p className="text-sm text-slate-600 leading-relaxed line-clamp-3 font-light">
                 {development.description}
               </p>
 
-              {/* Features */}
+              {/* Luxury Features */}
               <div className="flex flex-wrap gap-2">
-                {development.features.map((feature, idx) => (
+                {development.features.slice(0, 4).map((feature, idx) => (
                   <span
                     key={idx}
-                    className="px-2.5 py-1 bg-muted text-foreground text-xs font-medium rounded-md"
+                    className="px-3 py-1.5 bg-gradient-to-r from-slate-100 to-slate-50 border border-slate-200 text-slate-700 text-xs font-semibold rounded-lg shadow-sm"
                   >
                     {feature}
                   </span>
                 ))}
+                {development.features.length > 4 && (
+                  <span className="px-3 py-1.5 bg-gradient-to-r from-amber-500 to-amber-400 text-white text-xs font-bold rounded-lg shadow-lg">
+                    +{development.features.length - 4} More
+                  </span>
+                )}
               </div>
 
-              {/* Pricing */}
+              {/* Luxury Pricing */}
               {development.price_per_sqm && (
-                <div className="text-xl font-semibold text-foreground">
-                  {formatCurrency(development.price_per_sqm)}/sqm
+                <div className="pt-2 border-t border-slate-200">
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-3xl font-bold text-slate-900 font-serif">
+                      {formatCurrency(development.price_per_sqm)}
+                    </span>
+                    <span className="text-sm text-slate-500 font-medium">/sqm</span>
+                  </div>
                 </div>
               )}
 
-              {/* Action Buttons */}
-              <div className="flex gap-2 pt-2">
+              {/* Luxury Action Buttons */}
+              <div className="flex gap-3 pt-4">
                 <button
                   onClick={() => setSelectedDevelopment(development)}
-                  className="flex-1 bg-primary text-primary-foreground py-2.5 px-4 rounded-lg font-medium hover:bg-primary/90 transition-colors duration-200 shadow-sm flex items-center justify-center gap-2"
+                  className="flex-1 bg-gradient-to-r from-amber-500 to-amber-400 text-white py-3.5 px-6 rounded-xl font-bold text-sm hover:from-amber-600 hover:to-amber-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center gap-2"
                 >
                   View Details
                   <ArrowRight className="h-4 w-4" />
                 </button>
                 <button
                   onClick={() => startEditing(development)}
-                  className="px-4 py-2.5 bg-muted text-foreground rounded-lg font-medium hover:bg-muted/80 transition-colors duration-200"
+                  className="px-4 py-3.5 bg-slate-100 text-slate-700 rounded-xl font-semibold hover:bg-slate-200 transition-all duration-300 shadow-sm hover:shadow-md"
                   title="Edit this listing"
                 >
                   <Edit className="h-4 w-4" />

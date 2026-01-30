@@ -246,3 +246,122 @@ html {
 .hover-lift:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
+
+/* Ultra-Luxury Enhancements */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.luxury-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(251, 191, 36, 0.1) 50%,
+    transparent 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 3s infinite;
+}
+
+/* Luxury gradient text */
+.luxury-gradient-text {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Premium glass effect */
+.luxury-glass {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Luxury card hover effect */
+.luxury-card {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.luxury-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(251, 191, 36, 0.1),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.luxury-card:hover::before {
+  left: 100%;
+}
+
+/* Premium button glow */
+.luxury-button-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.luxury-button-glow::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.luxury-button-glow:hover::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Luxury text shadow */
+.luxury-text-shadow {
+  text-shadow: 0 2px 20px rgba(251, 191, 36, 0.3);
+}
+
+/* Premium border gradient */
+.luxury-border-gradient {
+  position: relative;
+  background: white;
+  border-radius: 24px;
+}
+
+.luxury-border-gradient::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 24px;
+  padding: 2px;
+  background: linear-gradient(135deg, #f59e0b, #d97706, #b45309);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.luxury-border-gradient:hover::before {
+  opacity: 1;
+}

@@ -36,8 +36,8 @@ const instrumentSerif = Instrument_Serif({
 })
 
 export const metadata: Metadata = {
-  title: 'VisitABK - Discover Abeokuta',
-  description: 'Experience Abeokuta\'s rich cultural heritage, historic landmarks like Olumo Rock, vibrant local cuisine, and premium eco-friendly real estate opportunities. Your gateway to authentic Nigerian tourism and sustainable living in Ogun State.',
+  title: 'Bali - Ultra-Luxury Real Estate & Exclusive Experiences',
+  description: 'An exclusive sanctuary for the world\'s most discerning travelers. Experience pristine beaches, world-class wellness retreats, Michelin-starred dining, and ultra-luxury real estate investments in one of the world\'s most sought-after destinations.',
 }
 
 export default function RootLayout({
