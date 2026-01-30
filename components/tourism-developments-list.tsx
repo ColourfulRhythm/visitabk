@@ -314,17 +314,17 @@ const realDevelopments = [
     name: 'Hidden Leaf Village Hills',
     location: 'Kobape, Abeokuta, Ogun State',
     developer: 'Focal Point Property Development & Management Services Ltd.',
-    status: 'pre-launch',
-    size_acres: 120,
-    description: 'Premium hillside development offering exclusive private estates with panoramic views. Features infinity pools, wellness centers, private dining pavilions, and 24/7 concierge services. A sanctuary for discerning investors seeking privacy and natural beauty.',
+    status: 'selling',
+    size_acres: 60,
+    description: 'Scenic hillside development open for individual ownership in acres. Nestled in the rolling hills of Kobape, this serene location offers panoramic views, fresh air, and a peaceful escape from urban life. Perfect for those seeking to build their dream home or investment property in nature.',
     website: 'https://focalpointproperties.com',
     email: '2seasonsabk@gmail.com',
     phone: '08156901392, 07071670649',
-    price_per_sqm: 15000,
+    price_per_sqm: 1500,
     gps_lat: 7.1764,
     gps_lng: 3.3671,
-    image: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=center',
-    features: ['Premium Estates', 'Infinity Pools', 'Wellness Centers', 'Private Dining', '24/7 Concierge', 'Panoramic Views', '120 Acres'],
+    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=600&fit=crop&crop=center',
+    features: ['Individual Ownership', 'Hillside Location', 'Panoramic Views', 'Acre Plots Available', '60 Acres', 'Serene Environment', 'Investment Opportunity'],
     created_at: '2024-01-30'
   }
 ]
