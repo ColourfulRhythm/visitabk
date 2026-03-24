@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { Plus, ExternalLink } from 'lucide-react'
 import Link from 'next/link'
-import { TourismHero } from '@/components/tourism-hero'
+import { HeroSection } from '@/components/ui/hero-section-9'
 import { TourismSearchBar } from '@/components/tourism-search-bar'
 import { TourismDevelopmentsList } from '@/components/tourism-developments-list'
 import { TourismAttractions } from '@/components/tourism-attractions'
@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <TourismHero />
+      <HeroSection />
 
       {/* Search Section */}
       <div className="bg-slate-50 py-12">

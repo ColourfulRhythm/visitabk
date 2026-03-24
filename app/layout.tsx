@@ -28,11 +28,12 @@ const raleway = Raleway({
   display: 'swap',
 })
 
-const instrumentSerif = Instrument_Serif({ 
+const instrumentSerif = Instrument_Serif({
   subsets: ['latin'],
   weight: ['400'],
   variable: '--font-instrument',
   display: 'swap',
+  adjustFontFallback: false,
 })
 
 export const metadata: Metadata = {

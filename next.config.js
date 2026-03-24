@@ -6,7 +6,8 @@ const nextConfig = {
     domains: ['images.unsplash.com', 'via.placeholder.com'],
     unoptimized: true,
   },
-  distDir: 'out',
+  // Do not set distDir to `out`: `output: 'export'` already writes the static site to `out/`.
+  // Using the same folder for Next's build cache breaks `next dev` (root route 404 / RSC errors).
   async headers() {
     return [
       {
